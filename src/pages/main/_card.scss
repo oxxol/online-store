@@ -1,0 +1,84 @@
+.store__goods {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  height: min-content;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+.card {
+  max-width: calc(100% / 4 - 0.4rem);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 0.2rem;
+  padding: 1rem;
+  border: 1px solid transparent;
+  text-align: start;
+  cursor: pointer;
+}
+
+.card__img {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.card__name {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.card__price {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.card__category,
+.card__metal,
+.card__rating,
+.card__collection {
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.card__buttons {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1rem;
+  width: 100%;
+}
+
+.card__button-add,
+.card__button-details {
+  width: 45%;
+  height: 3rem;
+  border: 1px solid $color-light-xl;
+  background-color: $color-light-xl;
+  line-height: 3rem;
+  margin: 0 auto;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $color-dark-cold;
+    background-color: $color-dark-cold;
+    color: $color-light-2xl;
+
+  }
+}

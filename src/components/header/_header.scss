@@ -1,0 +1,53 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: flex;
+  background-color: $color-light-2xl;
+  justify-content: space-between;
+  align-items: center;
+  height: 9rem;
+  z-index: 10;
+  border-bottom: 1px solid $color-light-l;
+
+  &__title {
+    font-family: "NewParisHeadline";
+    font-size: 3rem;
+    text-transform: uppercase;
+    flex-grow: 1;
+
+    &::first-letter {
+      color: $color-light-l;
+    }
+  }
+
+  &__cart-total {
+    flex-grow: 1;
+    font-size: 1.8rem;
+  }
+
+  &__cart {
+    position: relative;
+    margin: 5px;
+
+    & img {
+      width: 3rem;
+    }
+
+    &-count {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: $color-light-xl;
+      padding: 4px;
+      font-size: 1.3rem;
+      line-height: 1.3rem;
+      text-align: center;
+    }
+  }
+
+
+}

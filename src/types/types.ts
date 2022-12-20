@@ -1,3 +1,5 @@
+import {renderMain} from "../pages/main/renderMain";
+
 export interface Item {
   id: string;
   name: string;

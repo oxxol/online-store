@@ -1,5 +1,5 @@
-import { renderPage } from "../pages/currentPage/page";
+import {router} from "../router/router";
 
 export function app() {
-  renderPage()
+  router()
 }

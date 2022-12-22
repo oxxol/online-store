@@ -8,10 +8,13 @@ export function renderPage(name:string,id?:string) {
   const wrapper = renderWrapper()
   document.body.appendChild(wrapper)
   const header = renderHeader()
-  const page = id?renderProductDetails(id): routs[name]
+  if(typeof routs[name] === "undefined"){
+    name='**'
+  }
+  let page = id?renderProductDetails(id): routs[name]
   if(page){
-    wrapper.appendChild(header)
-    wrapper.appendChild(page)
+      wrapper.appendChild(header)
+      wrapper.appendChild(page)
+    }
   }
 
-}

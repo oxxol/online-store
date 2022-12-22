@@ -1,8 +1,9 @@
 import { renderPage } from "../pages/currentPage/page";
 
 export const router = () => {
+
   window.addEventListener("hashchange",()=> {
-    const hash = window.location.hash.slice(1)
+    let hash = window.location.hash.slice(1)
     locationHandler(hash)
   });
   locationHandler()

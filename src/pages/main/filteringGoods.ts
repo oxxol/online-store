@@ -1,3 +1,4 @@
+import { createEl } from "../../components/createEl";
 import { goods } from "../../data/goods";
 import { FiltersParams, Item } from "../../types/types";
 import { renderGoodCart } from "./renderGoodCart";
@@ -36,7 +37,8 @@ export function filteringGoods(filtersParams: FiltersParams) {
   if (storeGoods instanceof HTMLDivElement) {
     storeGoods.innerHTML = ''
     if (filteredGoodsId.length === 0) {
-      storeGoods.innerHTML = 'No products found'
+      const notFound = createEl('div', 'not-found','No products found')
+      storeGoods.appendChild(notFound)
     }
     filteredGoodsId.forEach((id) => {
       if (filtersParams.view) {

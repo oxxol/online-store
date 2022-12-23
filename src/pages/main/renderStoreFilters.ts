@@ -1,4 +1,5 @@
 import { createEl } from "../../components/createEl";
+import { createURL } from "./createURL";
 
 export function renderStoreFilters() {
   const storeFilters = createEl('div', 'store__filters')
@@ -9,15 +10,15 @@ export function renderStoreFilters() {
   optionSelected.textContent = 'Sort by'
   dropList.appendChild(optionSelected)
 
-  createOption('Price-LtoH','Price: Low to High')
-  createOption('Price-HtoL', 'Price: High to Low')
-  createOption('Rating-LtoH','Rating: Low to High')
-  createOption('Rating-HtoL', 'Rating: High to Low')
-  createOption('Collection-AtoZ','Collection: A to Z')
-  createOption('Collection-ZtoA', 'Collection: Z to A')
+  createDropListItem('Price-LtoH','Price: Low to High')
+  createDropListItem('Price-HtoL', 'Price: High to Low')
+  createDropListItem('Rating-LtoH','Rating: Low to High')
+  createDropListItem('Rating-HtoL', 'Rating: High to Low')
+  createDropListItem('Collection-AtoZ','Collection: A to Z')
+  createDropListItem('Collection-ZtoA', 'Collection: Z to A')
   drop.appendChild(dropList)
 
-  function createOption(value: string, text: string) {
+  function createDropListItem(value: string, text: string) {
     const option = createEl('option', 'drop__option')
     option.setAttribute('value', value)
     option.textContent = text
@@ -71,5 +72,19 @@ export function renderStoreFilters() {
   storeFilters.appendChild(foundBlock)
   storeFilters.appendChild(headerSearch)
   storeFilters.appendChild(viewBlock)
+
+  dropList.addEventListener('change', () => {
+    if (dropList instanceof HTMLSelectElement) createURL('sort', dropList.value)
+  })
+  inputSearch.addEventListener('input', () => {
+    if (inputSearch instanceof HTMLInputElement) createURL('search', inputSearch.value)
+  })
+  viewBlock.addEventListener('click', (event) => {
+    if (event.target instanceof HTMLInputElement) {
+      const value = (event.target.id).split('-')[1]
+      createURL('view', value)
+    }
+    
+  })
   return storeFilters
 }

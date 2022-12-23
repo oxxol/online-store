@@ -1,8 +1,10 @@
 .store__goods {
   position: relative;
   width: 100%;
+  min-height: 50vh;
   display: flex;
-  justify-content: start;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   row-gap: 1rem;
   height: min-content;
@@ -13,7 +15,6 @@
 
 
 .card {
-  max-width: calc(100% / 4 - 0.4rem);
   height: auto;
   display: flex;
   flex-direction: column;

@@ -20,44 +20,11 @@ export function createURL(key: Param, value: string) {
     } else {
       params.set(key, value)
     }
-
   }
   else {
     params.set(key, value)
   }
-  
   const newUrl = `${url}?${params.toString()}`
-  
   window.history.pushState({}, "", newUrl)
-
   getFiltersParams()
 } 
-
-
-
-
-
-
-// import { Option, Options, Params } from "../../types/types";
-
-// export function createURL(options: Options) {
-//   console.log("OPTIONS",options)
-
-//   const params: Params = {}
-//   for (const key in options) {
-//     if (options[key as Option].length) {
-//       params[key as Option] = options[key as Option]
-//     }
-//   }
-//   console.log("PARAMS",params)
-//   const url = new URL(window.location.href)
-//   const queries = new URLSearchParams(<URLSearchParams><unknown>params)
-//   url.search = queries.toString()
-  
-//   console.log('UURRLL',url.toString())
-//   window.history.pushState({}, "", url)
-// } 
-
-
-
-

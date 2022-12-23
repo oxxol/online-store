@@ -1,5 +1,3 @@
-import {renderMain} from "../pages/main/renderMain";
-
 export interface Item {
   id: string;
   name: string;
@@ -14,5 +12,16 @@ export interface Item {
   price: number;
   stock: number;
   description: string;
-
 }
+
+export interface FiltersParams {
+  collection?: string[];
+  category?: string[];
+  price?: string[];
+  stock?: string[];
+  sort?: string[];
+  search?: string[];
+  view?: string[]
+}
+
+export type Param = keyof FiltersParams;

@@ -11,9 +11,15 @@
   text-align: center;
 }
 
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 50vh;
+}
 
 .card {
-  max-width: calc(100% / 4 - 0.4rem);
   height: auto;
   display: flex;
   flex-direction: column;

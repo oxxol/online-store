@@ -1,8 +1,10 @@
 import { createEl } from "../../components/createEl";
 import { goods } from "../../data/goods";
 
-export function renderGoodCart(id:string) {
+export function renderGoodCart(id:string, view: string) {
   const card = createEl('div', 'card')
+  const viewCard = view === 'small' ? '5' : '4'
+  card.style.setProperty('max-width', `calc(100% / ${viewCard} - 0.4rem)`)
   card.setAttribute('id', `${id}-card`)
   const item = goods.find((item) => item.id === id)
 

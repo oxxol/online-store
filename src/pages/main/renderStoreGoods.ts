@@ -4,11 +4,9 @@ import { renderGoodCart } from "./renderGoodCart";
 
 export function renderStoreGoods() {
   const storeGoods = createEl('div', 'store__goods')
-
   const arrGoodsId = goods.map((good) => good.id)
-  console.log(arrGoodsId)
   arrGoodsId.forEach((id) => {
-    storeGoods.appendChild(renderGoodCart(id))
+    storeGoods.appendChild(renderGoodCart(id,'4'))
   })
 
   return storeGoods

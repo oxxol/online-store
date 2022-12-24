@@ -3,6 +3,8 @@ import { createEl } from "../createEl"
 export function renderHeader() {
   const header = createEl('header', 'header')
   const title = createEl('h1', 'header__title', 'Online store')
+  title.classList.add('pages')
+  title.setAttribute('data-href','main')
   const cartTotalBlock = createEl('div', 'header__cart-total')
   const cartTotal = document.createElement('span')
   cartTotal.textContent = 'Cart total: '

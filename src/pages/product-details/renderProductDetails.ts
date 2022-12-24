@@ -1,6 +1,6 @@
 import {createEl} from "../../components/createEl";
 
-export const renderProductDetails = (id:string) => {
+export const renderProductDetails = <T extends string | undefined>(id:T) => {
   const card = createEl('div', 'cart')
   card.innerHTML=`
     <h2>Product details</h2>

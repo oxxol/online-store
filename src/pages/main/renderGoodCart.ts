@@ -18,6 +18,7 @@ export function renderGoodCart(id:string) {
     const cardBtns = createEl('div', 'card__buttons')
     const cardBtnAdd = createEl('button', 'card__button-add', 'Add to cart')
     const cardBtnDetails = createEl('button', 'card__button-details', 'Details')
+    cardBtnAdd.id=id
     cardBtnDetails.id=id
     cardBtns.appendChild(cardBtnAdd)
     cardBtns.appendChild(cardBtnDetails)

@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6f567c26-664c-4a0d-93f8-ce07e350cf49" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/renderCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderCart.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/currentPage/page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/currentPage/page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main/renderGoodCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/renderGoodCart.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/product-details/renderProductDetails.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/product-details/renderProductDetails.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/routs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/routs.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.scss" afterDir="false" />
-    </list>
+    <list default="true" id="5f8d78ae-e597-438f-a801-e9dbc789b993" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +10,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="fix-render-pages" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

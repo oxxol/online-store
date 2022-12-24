@@ -7,6 +7,7 @@ export const renderProductDetails = <T extends string | undefined>(id:T) => {
     <h2>id = ${id}</h2>
 <h3 data-href="main" class="pages" style="cursor:pointer">Main page</h3>
 `
+
   return card
 }
 

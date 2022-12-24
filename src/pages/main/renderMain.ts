@@ -8,5 +8,6 @@ export function renderMain() {
   const store = renderStoreSection()
   main.append(filters)
   main.append(store)
+
   return main
 }

@@ -48,5 +48,6 @@ export function filteringGoods(filtersParams: FiltersParams) {
       }
     })
   }
+
   return storeGoods
 }

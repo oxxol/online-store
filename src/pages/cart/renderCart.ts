@@ -6,5 +6,6 @@ export function renderCart() {
     <h2>Cart</h2>
 <h3 data-href="main" class="pages" style="cursor:pointer">Main page</h3>
 `
+
   return cart
 }

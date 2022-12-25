@@ -1,6 +1,7 @@
 import {createEl} from "../../components/createEl";
 
 export const renderErrorPage = () => {
+
     const errorPage = createEl('div', 'error__page')
     const errorInfo = createEl('h2', 'error__page-info','404 Page Not Found')
     const errorDescription = createEl('h2', 'error__page-description','Oops, sorry! This page does not exist.')
@@ -10,5 +11,7 @@ export const renderErrorPage = () => {
     errorPage.appendChild(errorInfo)
     errorPage.appendChild(errorDescription)
     errorPage.appendChild(homeButton)
+    console.log('renderErrorPage')
+
     return errorPage
 }

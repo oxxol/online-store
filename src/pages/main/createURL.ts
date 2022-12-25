@@ -1,5 +1,5 @@
 import { Param } from "../../types/types";
-import { getFiltersParams } from "./getFiltersParams";
+import { filteringGoods } from "./filteringGoods";
 
 export function createURL(key: Param, value: string) {
   const url = window.location.origin
@@ -23,8 +23,9 @@ export function createURL(key: Param, value: string) {
   }
   else {
     params.set(key, value)
+    if (value.length === 0) params.delete(key)
   }
   const newUrl = `${url}?${params.toString()}`
   window.history.pushState({}, "", newUrl)
-  getFiltersParams()
+  filteringGoods()
 } 

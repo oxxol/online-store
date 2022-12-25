@@ -1,0 +1,20 @@
+%button {
+  min-height: 3rem;
+  border: 1px solid $color-light-xl;
+  background-color: $color-light-xl;
+  line-height: 3rem;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid $color-dark-cold;
+    background-color: $color-dark-cold;
+    color: $color-light-2xl;
+
+  }
+}

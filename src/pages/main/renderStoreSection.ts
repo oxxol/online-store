@@ -9,5 +9,6 @@ export function renderStoreSection() {
   
   store.appendChild(storeFilters)
   store.appendChild(storeGoods)
+  
   return store
 }

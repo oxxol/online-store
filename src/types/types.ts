@@ -14,6 +14,8 @@ export interface Item {
   description: string;
 }
 
+export type ItemKey = keyof Item;
+
 export interface FiltersParams {
   collection?: string[];
   category?: string[];

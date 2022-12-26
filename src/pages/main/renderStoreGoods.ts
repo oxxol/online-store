@@ -1,13 +1,22 @@
 import { createEl } from "../../components/createEl";
 import { goods } from "../../data/goods";
+import { filteringGoods } from "./filteringGoods";
+import { getFiltersParams } from "./getFiltersParams";
 import { renderGoodCart } from "./renderGoodCart";
 
 export function renderStoreGoods() {
   const storeGoods = createEl('div', 'store__goods')
-  const arrGoodsId = goods.map((good) => good.id)
-  arrGoodsId.forEach((id) => {
-    storeGoods.appendChild(renderGoodCart(id,'4'))
+  const filtersParams = getFiltersParams()
+  const filteredGoods = Object.keys(filtersParams).length === 0 ? goods : filteringGoods()
+  if (filteredGoods.length === 0) {
+    const notFound = createEl('div', 'not-found','No products found')
+    storeGoods.appendChild(notFound)
+  }
+  filteredGoods.forEach((good) => {
+    storeGoods.appendChild(renderGoodCart(good.id))
   })
 
   return storeGoods
 }
+
+

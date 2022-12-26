@@ -1,11 +1,11 @@
-import { createEl } from "../../components/createEl";
 import { goods } from "../../data/goods";
-import { FiltersParams, Item } from "../../types/types";
-import { renderGoodCart } from "./renderGoodCart";
+import { Item } from "../../types/types";
+import { getFiltersParams } from "./getFiltersParams";
+import { updateStoreGoods } from "./updateStoreGoods";
 import { sortingGoods } from "./sortingGoods";
 
-export function filteringGoods(filtersParams: FiltersParams) {
-
+export function filteringGoods() {
+  const filtersParams = getFiltersParams()
   let filteredGoods: Item[] = goods.filter(good => {
 
     if (filtersParams.collection) {
@@ -32,22 +32,7 @@ export function filteringGoods(filtersParams: FiltersParams) {
   })
 
   if(filtersParams.sort) filteredGoods = sortingGoods(filteredGoods, filtersParams.sort[0])
-  const filteredGoodsId = filteredGoods.map((good) => good.id)
-  const storeGoods = document.querySelector('.store__goods')
-  if (storeGoods instanceof HTMLDivElement) {
-    storeGoods.innerHTML = ''
-    if (filteredGoodsId.length === 0) {
-      const notFound = createEl('div', 'not-found','No products found')
-      storeGoods.appendChild(notFound)
-    }
-    filteredGoodsId.forEach((id) => {
-      if (filtersParams.view) {
-        storeGoods.appendChild(renderGoodCart(id, filtersParams.view[0]))
-      } else {
-        storeGoods.appendChild(renderGoodCart(id, '4'))
-      }
-    })
-  }
-
-  return storeGoods
+  updateStoreGoods(filteredGoods)
+  
+  return filteredGoods
 }

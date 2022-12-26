@@ -1,7 +1,9 @@
 @import "./components/constants";
 @import "./components/fonts";
+@import "./components/placeholders";
 @import "./components/wrapper/wrapper";
 @import "./components/header/header";
+@import "./components/footer/footer";
 @import "./pages/main/filters";
 @import "./pages/main/card";
-@import "./pages/error/_error.scss";
+@import "./pages/error/error";

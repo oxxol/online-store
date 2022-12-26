@@ -1,10 +1,12 @@
 import { createEl } from "../../components/createEl";
 import { goods } from "../../data/goods";
+import { getFiltersParams } from "./getFiltersParams";
 
-export function renderGoodCart(id:string, view: string) {
+export function renderGoodCart(id: string) {
   const card = createEl('div', 'card')
-  const viewCard = view === 'small' ? '5' : '4'
-  card.style.setProperty('max-width', `calc(100% / ${viewCard} - 0.4rem)`)
+  const filtersParams = getFiltersParams()
+  const view = filtersParams.view?.join('') === 'small'? '5':'4'
+  card.style.setProperty('max-width', `calc(100% / ${view} - 0.4rem)`)
   card.setAttribute('id', `${id}-card`)
   const item = goods.find((item) => item.id === id)
 
@@ -15,7 +17,7 @@ export function renderGoodCart(id:string, view: string) {
     const cardPrice = createEl('span', 'card__price', `$ ${(item.price).toString()}`)
     const cardCollection = createEl('span', 'card__collection', `collection: ${item.collection}`)
     const cardCategory = createEl('span', 'card__category', `category: ${item.category}`)
-    const cardMetal = createEl('span', 'card__metal', `metal: ${item.metal}`)
+    const cardStock = createEl('span', 'card__stock', `stock: ${item.stock}`)
     const cardRating = createEl('span', 'card__rating', `rating: ${item.rating}`)
     const cardBtns = createEl('div', 'card__buttons')
     const cardBtnAdd = createEl('button', 'card__button-add', 'Add to cart')
@@ -28,9 +30,10 @@ export function renderGoodCart(id:string, view: string) {
     card.appendChild(cardPrice)
     card.appendChild(cardCollection)
     card.appendChild(cardCategory)
-    card.appendChild(cardMetal)
+    card.appendChild(cardStock)
     card.appendChild(cardRating)
     card.appendChild(cardBtns)
   }
+  
   return card
 }

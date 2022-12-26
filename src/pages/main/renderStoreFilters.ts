@@ -1,5 +1,10 @@
 import { createEl } from "../../components/createEl";
+import { goods } from "../../data/goods";
 import { createURL } from "./createURL";
+import { filteringGoods } from "./filteringGoods";
+import { getFiltersParams } from "./getFiltersParams";
+import { changeValueCheckboxFilter } from "./changeValueCheckboxFilter";
+import { changeValueRangeFilter } from "./changeValueRangeFilter";
 
 export function renderStoreFilters() {
   const storeFilters = createEl('div', 'store__filters')
@@ -10,6 +15,11 @@ export function renderStoreFilters() {
   optionSelected.textContent = 'Sort by'
   dropList.appendChild(optionSelected)
 
+  const filtersParams = getFiltersParams()
+  const selectedSort = filtersParams.sort?.join('')
+  const searchText = filtersParams.search?.join('')
+  const selectedView = filtersParams.view?.join('')
+
   createDropListItem('Price-LtoH','Price: Low to High')
   createDropListItem('Price-HtoL', 'Price: High to Low')
   createDropListItem('Rating-LtoH','Rating: Low to High')
@@ -19,17 +29,18 @@ export function renderStoreFilters() {
   drop.appendChild(dropList)
 
   function createDropListItem(value: string, text: string) {
-    const option = createEl('option', 'drop__option')
+
+    const option = createEl('option', 'drop__option', text)
     option.setAttribute('value', value)
-    option.textContent = text
+    if(selectedSort === value) option.setAttribute('selected', 'true')
     dropList.appendChild(option)
   }
 
   const foundBlock = createEl('div', 'found__block')
   const found = document.createElement('span')
   found.textContent = 'Found: '
-  const foundCount = document.createElement('span')
-  foundCount.textContent= `0`
+  const arrGoodsId = Object.keys(filtersParams).length === 0 ? goods.map((good) => good.id) : filteringGoods()
+  const foundCount = createEl('span', 'found__block-count', arrGoodsId.length.toString())
   foundBlock.appendChild(found)
   foundBlock.appendChild(foundCount)
 
@@ -38,6 +49,7 @@ export function renderStoreFilters() {
   if (inputSearch instanceof HTMLInputElement) inputSearch.placeholder = 'Search'
   inputSearch.setAttribute('autofocus', 'true')
   inputSearch.setAttribute('autocomplete', 'off')
+  if(searchText) inputSearch.setAttribute('value', searchText)
   const btnSearch = createEl('button', 'search__block-btn-search')
   const btnRemove = createEl('button', 'search__block-btn-remove')
   headerSearch.appendChild(inputSearch)
@@ -54,6 +66,7 @@ export function renderStoreFilters() {
   inputBig.setAttribute('type', 'radio')
   inputBig.setAttribute('name', 'view')
   inputBig.setAttribute('checked', 'true')
+  if(selectedView==='small') inputBig.setAttribute('checked', 'false')
   viewBlock.appendChild(inputBig)
   viewBlock.appendChild(labelBig)
 
@@ -65,6 +78,7 @@ export function renderStoreFilters() {
   inputSmall.setAttribute('id', 'view-small')
   inputSmall.setAttribute('type', 'radio')
   inputSmall.setAttribute('name', 'view')
+  if(selectedView ==='small') inputSmall.setAttribute('checked', 'true')
   viewBlock.appendChild(inputSmall)
   viewBlock.appendChild(labelSmall)
   
@@ -78,13 +92,15 @@ export function renderStoreFilters() {
   })
   inputSearch.addEventListener('input', () => {
     if (inputSearch instanceof HTMLInputElement) createURL('search', inputSearch.value)
+    changeValueCheckboxFilter()
+    changeValueRangeFilter()
   })
   viewBlock.addEventListener('click', (event) => {
     if (event.target instanceof HTMLInputElement) {
       const value = (event.target.id).split('-')[1]
       createURL('view', value)
     }
-    
   })
+  
   return storeFilters
 }

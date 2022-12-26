@@ -24,29 +24,11 @@
 
     &-btn-reset,
     &-btn-copy {
-      height: 3rem;
-      border: 1px solid $color-light-xl;
-      background-color: $color-light-xl;
-      line-height: 3rem;
-      margin: 0 auto;
-      font-size: 1.2rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      text-align: center;
-      transition: 0.3s;
-      cursor: pointer;
+      @extend %button;
       width: calc((100% - 1rem)/2);
-
-      &:hover {
-        border: 1px solid $color-dark-cold;
-        background-color: $color-dark-cold;
-        color: $color-light-2xl;
-      }
     }
-
   }
 }
-
 
 .checkbox {
 
@@ -55,11 +37,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: $color-dark;
 
     & input:checked+label:before {
       background-color: $color-dark;
     }
-
   }
 
   &__block-found {
@@ -78,7 +60,6 @@
   &__label {
     position: relative;
     font-size: 1.8rem;
-    color: $color-dark;
     margin: 3px 0;
     cursor: pointer;
 
@@ -133,8 +114,6 @@
   border-radius: 2px;
   background: $color-light-l;
 }
-
-
 
 .stock__slider,
 .price__slider {
@@ -201,7 +180,7 @@ input[type="range"]::-webkit-slider-thumb {
     width: 100%;
     display: flex;
     justify-content: space-around;
-    align-items: baseline;
+    align-items: center;
     margin-bottom: 2rem;
   }
 }

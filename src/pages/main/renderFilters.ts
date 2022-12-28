@@ -16,14 +16,14 @@ export function renderFilters() {
   filtersBtns.appendChild(resetBtn)
   filtersBtns.appendChild(copyBtn)
 
-  const filterBrand = renderCheckboxFilter(['Holiday', 'Luxe', 'Pearls', 'Florals', 'Everyday'], 'collection')
+  const filterCollection = renderCheckboxFilter(['Holiday', 'Luxe', 'Pearls', 'Florals', 'Everyday'], 'collection')
   const filterCategory =  renderCheckboxFilter(['earrings', 'bracelet', 'necklace'], 'category')
   const filterPrice = renderRangeFilter('price')
   const filterStock = renderRangeFilter('stock')
 
   filters.appendChild(filtersBtns)
-  filters.append(filterBrand)
   filters.appendChild(filterCategory)
+  filters.appendChild(filterCollection)
   filters.appendChild(filterPrice)
   filters.appendChild(filterStock)
   

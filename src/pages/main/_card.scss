@@ -31,6 +31,10 @@
   cursor: pointer;
 }
 
+.card.incart {
+  border: solid 1px $color-light-l;
+}
+
 .card__img {
   width: 100%;
   margin-bottom: 1rem;
@@ -71,10 +75,9 @@
   width: 45%;
   @extend %button;
 }
-.added-item{
+
+.added-item {
   background: $color-light-l;
   position: relative;
   color: #E5DAD2;
-
-
 }

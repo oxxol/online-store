@@ -12,7 +12,7 @@ export function renderGoodCart(id: string) {
 
   if (item) {
     const cardImg = createEl('img', 'card__img')
-    if (cardImg instanceof HTMLImageElement) cardImg.src = require(`../../assets/img/webp/${id}.webp`)
+    if (cardImg instanceof HTMLImageElement) cardImg.setAttribute('src', item.img[0])
     const cardName = createEl('span', 'card__name', item.name)
     const cardPrice = createEl('span', 'card__price', `$ ${(item.price).toString()}`)
     const cardCollection = createEl('span', 'card__collection', `collection: ${item.collection}`)

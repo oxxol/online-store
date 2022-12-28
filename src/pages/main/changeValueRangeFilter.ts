@@ -1,13 +1,15 @@
 import { Param } from "../../types/types"
 import { getFromToValueOfRangeFilter } from "./getFromToValueOfRangeFilter"
 
-export function changeValueRangeFilter () {
+export function changeValueRangeFilter() {
+  // console.log('change value')
   const sliderInputs = document.querySelectorAll('.slider-input')
   sliderInputs.forEach((input) => {
     const typeFilter = input.getAttribute('id')?.split('-')[1] as Param
     const value = input.getAttribute('id')?.split('-')[0].toLowerCase()
 
     if (typeFilter !== undefined && value !== undefined && input instanceof HTMLInputElement) {
+      // console.log('typefilter', typeFilter)
       const [from,to] = getFromToValueOfRangeFilter(typeFilter)
       if (value === 'from') input.value = from.toString()
       if (value === 'to') input.value = to.toString()

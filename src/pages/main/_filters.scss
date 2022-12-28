@@ -208,12 +208,11 @@ input[type="range"]::-webkit-slider-thumb {
     border: 1px solid $color-dark-cold;
   }
 
-  &-btn-remove,
   &-btn-search {
     display: block;
     position: absolute;
     right: 1.2rem;
-    background-image: url(./assets/img/svg/search.svg);
+    // background-image: url(./assets/img/svg/search.svg);
     background-repeat: no-repeat;
     background-size: contain;
     width: 18px;
@@ -222,21 +221,6 @@ input[type="range"]::-webkit-slider-thumb {
     background-color: transparent;
     cursor: pointer;
     transition: 0.2s;
-  }
-
-  &-btn-remove {
-    display: none;
-    background-image: url(./assets/img/svg/close.svg);
-    width: 14px;
-    height: 14px;
-
-    & .visible {
-      display: block;
-    }
-  }
-
-  &-btn-search .hidden {
-    display: none;
   }
 }
 

@@ -1,13 +1,14 @@
 .product-details {
   font-size: 1.6rem;
   min-height: calc(100vh - 18rem);
+  padding: 2rem 0;
 }
 
 .breadcrumb {
   &__list {
     display: flex;
     margin: 0;
-    padding: 2rem 0;
+    padding-bottom: 2rem;
   }
 
   &__item {

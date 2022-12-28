@@ -51,10 +51,15 @@ export function renderStoreFilters() {
   inputSearch.setAttribute('autocomplete', 'off')
   if(searchText) inputSearch.setAttribute('value', searchText)
   const btnSearch = createEl('button', 'search__block-btn-search')
-  const btnRemove = createEl('button', 'search__block-btn-remove')
+  if (inputSearch instanceof HTMLInputElement && inputSearch.value !== '') {
+    btnSearch.style.backgroundImage = 'url(./assets/image/close.svg)'
+  } else {
+    btnSearch.style.backgroundImage = 'url(./assets/image/search.svg)'
+  }
+  // const btnRemove = createEl('button', 'search__block-btn-remove')
   headerSearch.appendChild(inputSearch)
   headerSearch.appendChild(btnSearch)
-  headerSearch.appendChild(btnRemove);
+  // headerSearch.appendChild(btnRemove);
 
   const viewBlock = createEl('div', 'view__block')
   const labelBig = createEl('label', 'view__label')
@@ -90,11 +95,25 @@ export function renderStoreFilters() {
   dropList.addEventListener('change', () => {
     if (dropList instanceof HTMLSelectElement) createURL('sort', dropList.value)
   })
+
   inputSearch.addEventListener('input', () => {
-    if (inputSearch instanceof HTMLInputElement) createURL('search', inputSearch.value)
-    changeValueCheckboxFilter()
-    changeValueRangeFilter()
+    if (inputSearch instanceof HTMLInputElement) {
+      createURL('search', inputSearch.value)
+      changeValueCheckboxFilter()
+      changeValueRangeFilter()
+      btnSearch.style.backgroundImage = 'url(./assets/image/close.svg)'}
   })
+
+  btnSearch.addEventListener('click', () => {
+    if (inputSearch instanceof HTMLInputElement && inputSearch.value !== '') {
+      inputSearch.value = ''
+      btnSearch.style.backgroundImage = 'url(./assets/image/search.svg)'
+      createURL('search', inputSearch.value)
+      changeValueCheckboxFilter()
+      changeValueRangeFilter()
+    }
+  })
+
   viewBlock.addEventListener('click', (event) => {
     if (event.target instanceof HTMLInputElement) {
       const value = (event.target.id).split('-')[1]

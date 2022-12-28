@@ -66,6 +66,7 @@ export function renderRangeFilter(typeFilter: Param) {
 
   filter.addEventListener('input', (event: Event) => {
     if (event.target instanceof HTMLInputElement) {
+      console.log('event target input')
       const value = event.target.value
       let from = '0'
       let to ='0'
@@ -73,15 +74,19 @@ export function renderRangeFilter(typeFilter: Param) {
         from = value
         if (sliderInput1 instanceof HTMLInputElement) to = sliderInput1.value
         sliderMin.textContent = value
+        createURL(typeFilter, `${from},${to}`)
+        changeValueCheckboxFilter()
+        changeValueRangeFilter()
       }
       if (event.target.id === `to-${typeFilter}`) {
         if (sliderInput instanceof HTMLInputElement) from = sliderInput.value
         to = value
         sliderMax.textContent = value
+        createURL(typeFilter, `${from},${to}`)
+        changeValueCheckboxFilter()
+        changeValueRangeFilter()
       }
-      createURL(typeFilter, `${from},${to}`)
-      changeValueCheckboxFilter()
-      changeValueRangeFilter()
+      
 
     }
   })

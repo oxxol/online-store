@@ -76,12 +76,12 @@ export const renderProductDetails = <T extends string | undefined>(id: T) => {
       // photo.setAttribute('src', './assets/image/01.webp')
 
     }
-    // good.img.forEach(el => {
-    //   console.log(el)
-    //   const img = createEl('img', 'images__previews-preview')
-    //   img.setAttribute('src', el)
-    //   previews.appendChild(img)
-    // });
+    item.img.forEach(el => {
+      console.log(el)
+      const img = createEl('img', 'images__previews-preview')
+      img.setAttribute('src', el)
+      previews.appendChild(img)
+    });
     // if (photo instanceof HTMLImageElement) photo.src = require(`url(${good?.img[0]})`)
     // if (photo instanceof HTMLImageElement) photo.src = require(`${good?.img[0]}`)
     // photo.style.backgroundImage = require(good?.img[0] as string)

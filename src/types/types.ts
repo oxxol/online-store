@@ -12,6 +12,13 @@ export interface Item {
   price: number;
   stock: number;
   description: string;
+  count?:number;
+  total?:number;
+}
+export interface Promo{
+  code: string,
+  name: string,
+  discount: number
 }
 
 export type ItemKey = keyof Item;

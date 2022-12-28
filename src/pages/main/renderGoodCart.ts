@@ -1,6 +1,7 @@
 import { createEl } from "../../components/createEl";
 import { goods } from "../../data/goods";
 import { getFiltersParams } from "./getFiltersParams";
+import {updateProductList} from "../cart/updateProductList";
 
 export function renderGoodCart(id: string) {
   const card = createEl('div', 'card')
@@ -22,6 +23,7 @@ export function renderGoodCart(id: string) {
     const cardBtns = createEl('div', 'card__buttons')
     const cardBtnAdd = createEl('button', 'card__button-add', 'Add to cart')
     const cardBtnDetails = createEl('button', 'card__button-details', 'Details')
+    cardBtnAdd.id=id
     cardBtnDetails.id=id
     cardBtns.appendChild(cardBtnAdd)
     cardBtns.appendChild(cardBtnDetails)
@@ -33,6 +35,9 @@ export function renderGoodCart(id: string) {
     card.appendChild(cardStock)
     card.appendChild(cardRating)
     card.appendChild(cardBtns)
+    cardBtnAdd.addEventListener('click',()=>{
+      updateProductList(id, 1)
+    })
   }
   
   return card

@@ -898,5 +898,4 @@ export const goods = [
     "price": 48.00,
     "stock": 10,
     "description": "A classic pendant necklace with a gorgeous see-through blush gem and sleek modern silhouette. The teardrop pendant gives this piece an elevated and sophisticated vibe.",
-  },
-]
+  }]

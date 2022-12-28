@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f8d78ae-e597-438f-a801-e9dbc789b993" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/router/locationHandler.ts" afterDir="false" />
+    <list default="true" id="5f8d78ae-e597-438f-a801-e9dbc789b993" name="Changes" comment="feat: merge changes">
+      <change afterPath="$PROJECT_DIR$/src/data/promo.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/cart/_cart.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/cart/calculateNumberOfPages.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/cart/getDiscount.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/cart/getState.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/cart/renderAppliedCodes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/cart/renderCartTitle.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/cart/renderGeneralCartInfo.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/cart/renderProductList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/cart/renderProductListItem.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/cart/setPageNumber.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/cart/updateProductList.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/goods.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/goods.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/cart/renderCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderCart.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/currentPage/page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/currentPage/page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/error/renderErrorPage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/error/renderErrorPage.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main/filteringGoods.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/filteringGoods.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/main/renderMain.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/renderMain.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/product-details/renderProductDetails.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/product-details/renderProductDetails.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/router.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/router.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router/routs.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/routs.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/main/renderGoodCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/renderGoodCart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,13 +52,19 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/новый магазин/online-store/src/assets/img/webp&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\JEKa\\Desktop\\online-store\\node_modules\\typescript\\lib&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\новый магазин\\online-store\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\новый магазин\online-store\src\assets\img\webp" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\JEKa\Desktop\online-store\src\assets\img" />
       <recent name="C:\Users\JEKa\Desktop\online-store\src\assets\img\svg" />
@@ -57,12 +73,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6f567c26-664c-4a0d-93f8-ce07e350cf49" name="Changes" comment="" />
+      <changelist id="5f8d78ae-e597-438f-a801-e9dbc789b993" name="Changes" comment="" />
       <created>1671630717582</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671630717582</updated>
       <workItem from="1671630746788" duration="23601000" />
+      <workItem from="1672043464630" duration="4331000" />
+      <workItem from="1672049115978" duration="664000" />
+      <workItem from="1672049809389" duration="85382000" />
+      <workItem from="1672183612660" duration="894000" />
+      <workItem from="1672213120652" duration="694000" />
     </task>
     <servers />
   </component>
@@ -79,5 +100,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat: add cart functions" />
+    <MESSAGE value="feat: merge changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: merge changes" />
   </component>
 </project>

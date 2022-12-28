@@ -11,6 +11,7 @@ export const setPageNumber = (selector:string,quantity: number) => {
     countItemsOnPage = Number(localStorage.getItem('countOfItemsOnCartPage'))
   }
   const countOfPagesInCart= calculateNumberOfPages(countOfGoodsInCart,countItemsOnPage)
+
   if(pageNumber+quantity>0 && pageNumber+quantity<=countOfPagesInCart) pageNumber+=quantity
   document.querySelector(`.${selector}`)!.textContent =pageNumber.toString()
   localStorage.setItem('currentPage',pageNumber.toString())

@@ -10,7 +10,6 @@ import { changeValueRangeFilter } from "./changeValueRangeFilter"
 
 export function renderRangeFilter(typeFilter: Param) {
   const filtersParams = getFiltersParams()
-  // const filteredGoods = filteringGoods()
   const filteredGoods = Object.keys(filtersParams).length === 0 ? goods : filteringGoods()
   const filter = createEl('div', 'filters__range')
   const title = createEl('h4', 'filters__title' , typeFilter)

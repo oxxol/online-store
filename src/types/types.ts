@@ -12,8 +12,6 @@ export interface Item {
   price: number;
   stock: number;
   description: string;
-  count?:number;
-  total?:number;
 }
 export interface Promo{
   code: string,
@@ -34,3 +32,8 @@ export interface FiltersParams {
 }
 
 export type Param = keyof FiltersParams;
+
+export interface ItemInCart extends Item{
+  count?:number;
+  total?:number;
+}

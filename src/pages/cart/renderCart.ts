@@ -11,11 +11,12 @@ export function renderCart() {
   const cartTitle = renderCartTitle()
   const cartList = createEl('div', 'cart__list')
   const state = getState()
+
   if (state.length>0) cart.appendChild(cartTitle)
   renderProductList(state,cartList)
   cart.appendChild(cartList)
   cartWrapper.appendChild(cart)
-  cartWrapper.appendChild(renderGeneralCartInfo())
+  if (state.length>0) cartWrapper.appendChild(renderGeneralCartInfo())
 
   return cartWrapper
 }

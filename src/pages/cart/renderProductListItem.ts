@@ -1,9 +1,9 @@
 import {createEl} from "../../components/createEl";
 import {goods} from "../../data/goods";
-import {Item} from "../../types/types";
+import { ItemInCart} from "../../types/types";
 import {updateProductList} from "./updateProductList";
 
-export const renderProductListItem = (product: Item, index: number) => {
+export const renderProductListItem = (product: ItemInCart, index: number) => {
   const cartItem = createEl('div', 'cart__item')
   cartItem.setAttribute('id', `${product.id}`)
   const item = goods.find((item) => item.id === product.id)
@@ -16,8 +16,8 @@ export const renderProductListItem = (product: Item, index: number) => {
     const itemName = createEl('div', 'cart__details-name', item.name)
     const itemColor = createEl('div', 'cart__details-color', `Color: ${item.color}`)
     const itemOtherInfo = createEl('div', 'cart__details-other')
-    const itemRating = createEl('div', 'cart__details-other-rating',`Rating: ${item.rating}`)
-    const itemDiscont = createEl('div', 'cart__details-other',`Discont:`)
+    const rating = '★'.repeat(Number(item.rating)) + '☆'.repeat(5 - Number(item.rating))
+    const itemRating = createEl('div', 'cart__details-other-rating',`Rating: ${rating}`)
     const itemPrice = createEl('div', 'cart__details-price',`Price:${item.price}`)
     const countControls = createEl('div', 'cart__controls')
     const stockCount = createEl('div', 'cart__controls-stock',`Stock: ${product.stock}`)
@@ -32,7 +32,7 @@ export const renderProductListItem = (product: Item, index: number) => {
     itemDetails.appendChild(itemName)
     itemDetails.appendChild(itemColor)
     itemOtherInfo.appendChild(itemRating)
-    itemOtherInfo.appendChild(itemDiscont)
+    // itemOtherInfo.appendChild(itemDiscont)
     itemDetails.appendChild(itemOtherInfo)
     itemDetails.appendChild(itemPrice)
     countInfo.appendChild(decrementBtn)
@@ -55,5 +55,6 @@ export const renderProductListItem = (product: Item, index: number) => {
       }
     })
   }
+
   return cartItem
 }

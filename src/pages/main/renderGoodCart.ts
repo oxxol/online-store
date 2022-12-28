@@ -2,6 +2,7 @@ import { createEl } from "../../components/createEl";
 import { goods } from "../../data/goods";
 import { getFiltersParams } from "./getFiltersParams";
 import {updateProductList} from "../cart/updateProductList";
+import {Item} from "../../types/types";
 
 export function renderGoodCart(id: string) {
   const card = createEl('div', 'card')
@@ -25,6 +26,11 @@ export function renderGoodCart(id: string) {
     const cardBtnDetails = createEl('button', 'card__button-details', 'Details')
     cardBtnAdd.id=id
     cardBtnDetails.id=id
+    const cartState = localStorage.getItem('cartStateJewelryStore')?JSON.parse(`${localStorage.getItem('cartStateJewelryStore')}`):[]
+    if(cartState.some((item:Item)=>item.id==id)){
+      cardBtnAdd.classList.add('added-item')
+      cardBtnAdd.textContent='Drop from cart'
+    }
     cardBtns.appendChild(cardBtnAdd)
     cardBtns.appendChild(cardBtnDetails)
     card.appendChild(cardImg)
@@ -35,8 +41,17 @@ export function renderGoodCart(id: string) {
     card.appendChild(cardStock)
     card.appendChild(cardRating)
     card.appendChild(cardBtns)
+
     cardBtnAdd.addEventListener('click',()=>{
-      updateProductList(id, 1)
+      cardBtnAdd.classList.toggle('added-item')
+      if (cardBtnAdd.classList.contains('added-item')){
+        updateProductList(id, 1)
+        cardBtnAdd.textContent='Drop from cart'
+      }else{
+        updateProductList(id, 0)
+        cardBtnAdd.textContent='ADD to cart'
+      }
+
     })
   }
   

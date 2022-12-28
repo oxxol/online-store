@@ -8,7 +8,9 @@ export const updateProductList = (id: string, quantity: number) => {
   let cartState = getState()
   const productList = createEl('div', 'cart__list')
   const countItems = document.querySelector('.header__cart-count')
+  const generalCartInfo = document.querySelector('.cart__summary')
   let currentItem = cartState.find(item => item.id === id)
+
   if (currentItem) {
     if (currentItem.stock - quantity >= 0) {
       currentItem.stock = (currentItem.stock || 0) - quantity
@@ -25,11 +27,14 @@ export const updateProductList = (id: string, quantity: number) => {
     }
   }
   const currentIndex = cartState.findIndex(item => item.id === id)
-  if (currentItem!.count === 0) {
+  if (currentItem!.count === 0 || quantity===0) {
     cartState = [
       ...cartState.slice(0, currentIndex),
       ...cartState.slice(currentIndex + 1),
     ]
+  }
+  if(cartState.length==0){
+    if(generalCartInfo!==null)generalCartInfo.replaceChildren()
   }
   renderProductList(cartState, productList)
   if (countItems) countItems.textContent = cartState.length.toString()
@@ -45,8 +50,14 @@ export const updateProductList = (id: string, quantity: number) => {
   localStorage.setItem('cartTotalJewelryStore', total.toString())
   localStorage.setItem('cartCountTotalJewelryStore', totalCount.toString())
   document.querySelector('.header__cart-total-count')!.textContent = `$${total}`
-  document.querySelector('.cart__summary-total')!.textContent = `Total: $${total}`
-  document.querySelector('.cart__summary-count')!.textContent = `Products: ${totalCount}`
+  const cartTotal =document.querySelector('.cart__summary-total')
+  if(cartTotal!==null){
+    cartTotal.textContent = `Total: $${total}`
+  }
+  const cartSummaryCount=  document.querySelector('.cart__summary-count')
+  if(cartSummaryCount!==null){
+    cartSummaryCount.textContent = `Products: ${totalCount}`
+  }
   if (cartList!==null){
     cartList.replaceChildren()
     cartList.appendChild(productList)

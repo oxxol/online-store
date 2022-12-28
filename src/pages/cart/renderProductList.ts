@@ -1,8 +1,8 @@
 import {renderProductListItem} from "./renderProductListItem";
-import {Item} from "../../types/types";
+import {ItemInCart} from "../../types/types";
 import {setPageNumber} from "./setPageNumber";
 
-export const renderProductList = (array:Item[],wrapper: HTMLElement,countItems?:number,currentPage=1) => {
+export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countItems?:number,currentPage=1) => {
   if(array.length ==0 ) {
     const title= document.querySelector('.cart__title')
     if(title) title.replaceChildren()

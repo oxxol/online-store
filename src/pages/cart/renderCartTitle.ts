@@ -31,6 +31,7 @@ export const renderCartTitle = () => {
   checkCount.onchange=(e)=>{
     const target = e.target as HTMLInputElement;
     const list = <HTMLElement>cartTitle.nextSibling
+
     list.replaceChildren()
     localStorage.setItem('countOfItemsOnCartPage',target.value)
     renderProductList(getState(),list,+target.value)

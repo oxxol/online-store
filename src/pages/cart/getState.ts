@@ -1,7 +1,8 @@
-import {Item} from "../../types/types";
+import { ItemInCart} from "../../types/types";
 
 export const getState = () => {
-  let state: Item[]
+  let state: ItemInCart[]
+
   if (localStorage.getItem('cartStateJewelryStore')) {
     state = JSON.parse(`${localStorage.getItem('cartStateJewelryStore')}`)
   } else {

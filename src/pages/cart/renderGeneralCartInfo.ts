@@ -12,6 +12,8 @@ export const renderGeneralCartInfo = () => {
   const cartTotal = createEl('div','cart__summary-total')
   cartTotal.textContent= localStorage.getItem('cartTotalJewelryStore')? 'Total: $'+localStorage.getItem('cartTotalJewelryStore') : 'Total: $0'
   const discountInput = createEl('input', 'cart__summary-discount-input')
+  const discountExample = createEl('div', 'cart__summary-discount-example','Promo for test: \'rs\', \'epm\'')
+
   if (discountInput instanceof HTMLInputElement){
     discountInput.type = 'text'
     discountInput.autocomplete="off"
@@ -19,22 +21,18 @@ export const renderGeneralCartInfo = () => {
   }
   const currentDiscount = createEl('div','discount-current')
   const addButton =createEl('button','discount-current-btn','ADD')
-  // currentDiscount.appendChild(addButton)
-  // currentDiscount.classList.add('hide')
   infoWrapper.appendChild(countProducts)
   infoWrapper.appendChild(cartTotal)
   if(localStorage.getItem('appliedCodesJewelryStore')){
     getDiscount(cartTotal)
   }
-
   generalCartInfo.appendChild(infoTitle)
   generalCartInfo.appendChild(infoWrapper)
   generalCartInfo.appendChild(discountInput)
   generalCartInfo.appendChild(currentDiscount)
-
+  generalCartInfo.appendChild(discountExample)
 
   discountInput.addEventListener('input',(e)=>{
-
     const target = <HTMLInputElement>e.target
     const promoItem = promo.find(item=>item.code===target.value)
     if(promoItem){
@@ -44,21 +42,16 @@ export const renderGeneralCartInfo = () => {
         currentDiscount.appendChild(addButton)
         addButton.classList.remove('hide')
         addButton.onclick = () => {
-          // if(infoWrapper.lastChild!==null) infoWrapper.lastChild.remove()
-          // renderAppliedCodes(promoItem)
           addButton.classList.add('hide')
           getDiscount(cartTotal,promoItem)
         }
       }
-
     }
     else{
-      // if( currentDiscount.firstElementChild!==null && !currentDiscount.firstElementChild.classList.contains('discount-current-btn') ){
-      //   currentDiscount.firstElementChild.remove()
       currentDiscount.replaceChildren()
 
     }
-
   })
+
   return generalCartInfo
 }

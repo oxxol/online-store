@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f8d78ae-e597-438f-a801-e9dbc789b993" name="Changes" comment="feat: merge changes">
-      <change afterPath="$PROJECT_DIR$/src/data/promo.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/cart/_cart.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/cart/calculateNumberOfPages.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/cart/getDiscount.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/cart/getState.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/cart/renderAppliedCodes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/cart/renderCartTitle.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/cart/renderGeneralCartInfo.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/cart/renderProductList.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/cart/renderProductListItem.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/cart/setPageNumber.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/cart/updateProductList.ts" afterDir="false" />
+    <list default="true" id="5f8d78ae-e597-438f-a801-e9dbc789b993" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/goods.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/goods.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/wrapper/_wrapper.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/wrapper/_wrapper.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/_cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/_cart.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/calculateNumberOfPages.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/calculateNumberOfPages.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/getDiscount.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/getDiscount.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/getState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/getState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/renderAppliedCodes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderAppliedCodes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/cart/renderCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderCart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/renderCartTitle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderCartTitle.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/renderGeneralCartInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderGeneralCartInfo.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/renderProductList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderProductList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/renderProductListItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderProductListItem.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/setPageNumber.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/setPageNumber.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/updateProductList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/updateProductList.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/main/_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/_card.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/main/renderGoodCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/renderGoodCart.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/main/renderRangeFilter.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/main/renderRangeFilter.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,6 +36,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2JE5zlKrCqyYH99FZaOO3Z8Niq7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">

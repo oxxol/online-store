@@ -3,7 +3,7 @@ import {createEl} from "../../components/createEl";
 import {renderAppliedCodes} from "./renderAppliedCodes";
 
 export const getDiscount = (currentTotalWrapper:HTMLElement,item?: Promo) => {const discountBlock = createEl('div','cart__summary__discount-block')
-  const newTotalElement = createEl('div','cart__summary-total')
+  const newTotalElement = createEl('div','cart__summary-total-update')
   discountBlock.appendChild(newTotalElement)
   discountBlock.appendChild(renderAppliedCodes(item))
   currentTotalWrapper.classList.add('cancelled')

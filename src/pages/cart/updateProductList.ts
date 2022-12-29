@@ -2,6 +2,7 @@ import {createEl} from "../../components/createEl";
 import {goods} from "../../data/goods";
 import {getState} from "./getState";
 import {renderProductList} from "./renderProductList";
+import {getDiscount} from "./getDiscount";
 
 export const updateProductList = (id: string, quantity: number) => {
   const cartList = document.querySelector('.cart__list')
@@ -27,11 +28,13 @@ export const updateProductList = (id: string, quantity: number) => {
     }
   }
   const currentIndex = cartState.findIndex(item => item.id === id)
-  if (currentItem!.count === 0 || quantity===0) {
-    cartState = [
-      ...cartState.slice(0, currentIndex),
-      ...cartState.slice(currentIndex + 1),
-    ]
+  if (currentItem!== null){
+    if (currentItem.count === 0 || quantity === 0) {
+      cartState = [
+        ...cartState.slice(0, currentIndex),
+        ...cartState.slice(currentIndex + 1),
+      ]
+    }
   }
   if(cartState.length==0){
     if(generalCartInfo!==null)generalCartInfo.replaceChildren()
@@ -49,11 +52,13 @@ export const updateProductList = (id: string, quantity: number) => {
   },0)
   localStorage.setItem('cartTotalJewelryStore', total.toString())
   localStorage.setItem('cartCountTotalJewelryStore', totalCount.toString())
-  document.querySelector('.header__cart-total-count')!.textContent = `$${total}`
-  const cartTotal =document.querySelector('.cart__summary-total')
+  const cartTotalCount =document.querySelector('.header__cart-total-count')
+  if(cartTotalCount!==null)cartTotalCount.textContent = `$${total}`
+  const cartTotal =document.querySelector('.cart__summary-total')as HTMLElement
   if(cartTotal!==null){
     cartTotal.textContent = `Total: $${total}`
   }
+
   const cartSummaryCount=  document.querySelector('.cart__summary-count')
   if(cartSummaryCount!==null){
     cartSummaryCount.textContent = `Products: ${totalCount}`
@@ -62,4 +67,5 @@ export const updateProductList = (id: string, quantity: number) => {
     cartList.replaceChildren()
     cartList.appendChild(productList)
   }
+  getDiscount(cartTotal)
 }

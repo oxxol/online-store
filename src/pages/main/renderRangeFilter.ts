@@ -2,11 +2,11 @@ import { createEl } from "../../components/createEl"
 import { goods } from "../../data/goods"
 import { ItemKey, Param } from "../../types/types"
 import { createURL } from "./createURL"
-import { filteringGoods } from "./filteringGoods"
-import { getFiltersParams } from "./getFiltersParams"
 import { getFromToValueOfRangeFilter } from "./getFromToValueOfRangeFilter"
 import { changeValueCheckboxFilter } from "./changeValueCheckboxFilter"
 import { changeValueRangeFilter } from "./changeValueRangeFilter"
+import { getFiltersParams } from "./getFiltersParams"
+import { filteringGoods } from "./filteringGoods"
 
 export function renderRangeFilter(typeFilter: Param) {
   const filtersParams = getFiltersParams()
@@ -64,9 +64,8 @@ export function renderRangeFilter(typeFilter: Param) {
   sliderWrapper.appendChild(sliderMax)
   filter.appendChild(sliderWrapper)
 
-  filter.addEventListener('input', (event: Event) => {
+  filter.addEventListener('change', (event: Event) => {
     if (event.target instanceof HTMLInputElement) {
-      console.log('event target input')
       const value = event.target.value
       let from = '0'
       let to ='0'
@@ -86,8 +85,6 @@ export function renderRangeFilter(typeFilter: Param) {
         changeValueCheckboxFilter()
         changeValueRangeFilter()
       }
-      
-
     }
   })
   

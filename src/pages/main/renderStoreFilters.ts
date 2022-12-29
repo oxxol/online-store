@@ -29,7 +29,6 @@ export function renderStoreFilters() {
   drop.appendChild(dropList)
 
   function createDropListItem(value: string, text: string) {
-
     const option = createEl('option', 'drop__option', text)
     option.setAttribute('value', value)
     if(selectedSort === value) option.setAttribute('selected', 'true')
@@ -56,10 +55,8 @@ export function renderStoreFilters() {
   } else {
     btnSearch.style.backgroundImage = 'url(./assets/image/search.svg)'
   }
-  // const btnRemove = createEl('button', 'search__block-btn-remove')
   headerSearch.appendChild(inputSearch)
   headerSearch.appendChild(btnSearch)
-  // headerSearch.appendChild(btnRemove);
 
   const viewBlock = createEl('div', 'view__block')
   const labelBig = createEl('label', 'view__label')

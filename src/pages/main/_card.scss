@@ -1,14 +1,10 @@
 .store__goods {
-  position: relative;
   width: 100%;
   display: flex;
-  justify-content: start;
   flex-wrap: wrap;
-  row-gap: 1rem;
-  height: min-content;
+  gap: 1rem;
   font-size: 2rem;
   font-weight: 600;
-  text-align: center;
 }
 
 .not-found {
@@ -20,64 +16,69 @@
 }
 
 .card {
-  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0 0.2rem;
   padding: 1rem;
   border: 1px solid transparent;
   text-align: start;
-  cursor: pointer;
-}
 
-.card.incart {
-  border: solid 1px $color-light-l;
-}
+  &.added-item {
+    border: solid 1px $color-light-xl;
+  }
 
-.card__img {
-  width: 100%;
-  margin-bottom: 1rem;
-}
+  &__img-container {
+    width: 100%;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
 
-.card__name {
-  display: block;
-  font-size: 1.4rem;
-  font-weight: 600;
-  text-transform: uppercase;
-}
+  &__img {
+    display: block;
+    width: 100%;
+    transition: 0.5s;
+    cursor: pointer;
 
-.card__price {
-  display: block;
-  font-size: 1.4rem;
-  font-weight: 400;
-  text-transform: uppercase;
-}
+    &:hover {
+      transform: scale(1.05, 1.05);
+    }
+  }
 
-.card__category,
-.card__stock,
-.card__rating,
-.card__collection {
-  font-size: 1.4rem;
-  font-weight: 400;
-  text-align: center;
-}
+  &__name,
+  &__price {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
 
-.card__buttons {
-  display: flex;
-  justify-content: space-around;
-  padding-top: 1rem;
-  width: 100%;
-}
+  &__name {
+    font-weight: 600;
+  }
 
-.card__button-add,
-.card__button-details {
-  width: 45%;
-  @extend %button;
-}
+  &__category,
+  &__stock,
+  &__rating,
+  &__collection {
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-align: center;
+  }
 
-.added-item {
-  background: $color-light-l;
-  position: relative;
-  color: #E5DAD2;
+  &__buttons {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1rem;
+    width: 100%;
+  }
+
+  &__button-add,
+  &__button-details {
+    width: 45%;
+    @extend %button;
+  }
+
+  &__button-add.added-item {
+    @extend %buttonInCart;
+  }
 }

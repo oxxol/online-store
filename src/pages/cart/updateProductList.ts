@@ -28,7 +28,7 @@ export const updateProductList = (id: string, quantity: number) => {
     }
   }
   const currentIndex = cartState.findIndex(item => item.id === id)
-  if (currentItem!== null){
+  if (currentItem && currentItem!== null && currentItem.count!==null){
     if (currentItem.count === 0 || quantity === 0) {
       cartState = [
         ...cartState.slice(0, currentIndex),

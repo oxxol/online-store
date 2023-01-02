@@ -36,24 +36,24 @@ export function renderRangeFilter(typeFilter: Param) {
 
   const slider = createEl('div', `${typeFilter}__slider`)
   const sliderTrack = createEl('div', `${typeFilter}__slider-track`)
-  const sliderInput = createEl('input', 'slider-input')
+  const sliderInputFrom = createEl('input', 'slider-input')
 
-  sliderInput.setAttribute('type', 'range')
-  sliderInput.setAttribute('id', `from-${typeFilter}`)
-  sliderInput.setAttribute('min', min)
-  sliderInput.setAttribute('max', max)
-  sliderInput.setAttribute('value', from)
+  sliderInputFrom.setAttribute('type', 'range')
+  sliderInputFrom.setAttribute('id', `from-${typeFilter}`)
+  sliderInputFrom.setAttribute('min', min)
+  sliderInputFrom.setAttribute('max', max)
+  sliderInputFrom.setAttribute('value', from)
 
-  const sliderInput1 = createEl('input', 'slider-input')
-  sliderInput1.setAttribute('type', 'range')
-  sliderInput1.setAttribute('id', `to-${typeFilter}`)
-  sliderInput1.setAttribute('min', min)
-  sliderInput1.setAttribute('max', max)
-  sliderInput1.setAttribute('value', to)
+  const sliderInputTo = createEl('input', 'slider-input')
+  sliderInputTo.setAttribute('type', 'range')
+  sliderInputTo.setAttribute('id', `to-${typeFilter}`)
+  sliderInputTo.setAttribute('min', min)
+  sliderInputTo.setAttribute('max', max)
+  sliderInputTo.setAttribute('value', to)
 
   slider.appendChild(sliderTrack)
-  slider.appendChild(sliderInput)
-  slider.appendChild(sliderInput1)
+  slider.appendChild(sliderInputFrom)
+  slider.appendChild(sliderInputTo)
 
   const sliderMax = createEl('div', `range__control-max`)
   sliderMax.setAttribute('id', `${typeFilter}-max`)
@@ -65,26 +65,27 @@ export function renderRangeFilter(typeFilter: Param) {
   filter.appendChild(sliderWrapper)
 
   filter.addEventListener('change', (event: Event) => {
-    if (event.target instanceof HTMLInputElement) {
-      const value = event.target.value
+    if (event.target instanceof HTMLInputElement && sliderInputTo instanceof HTMLInputElement && sliderInputFrom instanceof HTMLInputElement) {
       let from = '0'
       let to ='0'
       if (event.target.id === `from-${typeFilter}`) {
-        from = value
-        if (sliderInput1 instanceof HTMLInputElement) to = sliderInput1.value
-        sliderMin.textContent = value
-        createURL(typeFilter, `${from},${to}`)
-        changeValueCheckboxFilter()
-        changeValueRangeFilter()
+        from = event.target.value
+        to = sliderInputTo.value     
+      } else if (event.target.id === `to-${typeFilter}`) {
+        from = sliderInputFrom.value
+        to = event.target.value
       }
-      if (event.target.id === `to-${typeFilter}`) {
-        if (sliderInput instanceof HTMLInputElement) from = sliderInput.value
-        to = value
-        sliderMax.textContent = value
-        createURL(typeFilter, `${from},${to}`)
-        changeValueCheckboxFilter()
-        changeValueRangeFilter()
+   
+      if (Number(from) > Number(to)) {
+        [from, to] =[to,from]
       }
+
+      sliderMin.textContent = from
+      sliderMax.textContent = to
+
+      createURL(typeFilter, `${from},${to}`)
+      changeValueCheckboxFilter()
+      changeValueRangeFilter()
     }
   })
   

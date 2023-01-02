@@ -1,6 +1,6 @@
 import { createEl } from "../../components/createEl"
 import { Item } from "../../types/types"
-import { renderGoodCart } from "./renderGoodCart"
+import { renderGoodCard } from "./renderGoodCard"
 
 export function updateStoreGoods(filteredGoods: Item[]) {
   const storeGoods = document.querySelector('.store__goods')
@@ -13,7 +13,7 @@ export function updateStoreGoods(filteredGoods: Item[]) {
       const notFound = createEl('div', 'not-found','No products found')
       storeGoods.appendChild(notFound)
     }
-    filteredGoodsId.forEach((id) => { storeGoods.appendChild(renderGoodCart(id))    
+    filteredGoodsId.forEach((id) => { storeGoods.appendChild(renderGoodCard(id))    
     })
   }
   if (found instanceof HTMLElement) found.textContent = filteredGoodsId.length.toString()

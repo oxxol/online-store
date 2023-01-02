@@ -1,6 +1,7 @@
 import {createEl} from "../../components/createEl";
 import { goods } from "../../data/goods";
 import { Item } from "../../types/types";
+import { updateProductList } from "../cart/updateProductList";
 
 export const renderProductDetails = <T extends string | undefined>(id: T) => {
   const item = goods.find(item => item.id === id)
@@ -28,7 +29,6 @@ export const renderProductDetails = <T extends string | undefined>(id: T) => {
     const photo = createEl('img', 'images__photo')
     if (photo instanceof HTMLImageElement) photo.setAttribute('src', item.img[0])
 
-
     item.img.forEach(el => {
       const container = createEl('div', 'images__previews-container')
       const img = createEl('img', 'images__previews-preview')
@@ -36,9 +36,8 @@ export const renderProductDetails = <T extends string | undefined>(id: T) => {
       container.appendChild(img)
       previews.appendChild(container)
       img.addEventListener('click', () => {
-        if(photo instanceof HTMLImageElement && img instanceof HTMLImageElement) photo.src = img.src
+        if (photo instanceof HTMLImageElement && img instanceof HTMLImageElement) photo.src = img.src
       })
-
     });
 
     const descriptionBlock = createEl('div', 'good__description')
@@ -53,10 +52,12 @@ export const renderProductDetails = <T extends string | undefined>(id: T) => {
     const description = createEl('p', 'description__description', `${item.description}`)
     const btns = createEl('div', 'description__buttons')
     const btnAdd = createEl('button', 'button__add', 'Add to cart')
-    if(cartState.some((item: Item)=>item.id==id)){
+
+    if (cartState.some((item: Item) => item.id == id)) {
       btnAdd.classList.add('added-item')
-      btnAdd.textContent= 'Remove'
+      btnAdd.textContent = 'Remove'
     }
+
     const btnBuy = createEl('button', 'button__buy', 'Buy now')
     
     imagesBlock.appendChild(previews)
@@ -77,8 +78,21 @@ export const renderProductDetails = <T extends string | undefined>(id: T) => {
     goodSection.appendChild(descriptionBlock)
     productDetails.appendChild(breadCrumb)
     productDetails.appendChild(goodSection)
-  }
 
+    btnAdd.addEventListener('click', () => {
+      btnAdd.classList.toggle('added-item');
+      if (typeof id == 'string') {
+        if (btnAdd.classList.contains('added-item')) {
+          updateProductList(id, 1);
+          btnAdd.textContent = 'Remove';
+        } else {
+          updateProductList(id, 0);
+          btnAdd.textContent = 'Add to cart';
+        }
+      }
+    })
+  }
+  
   return productDetails
 }
 

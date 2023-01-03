@@ -13,6 +13,11 @@ export interface Item {
   stock: number;
   description: string;
 }
+export interface Promo{
+  code: string,
+  name: string,
+  discount: number
+}
 
 export type ItemKey = keyof Item;
 
@@ -27,3 +32,8 @@ export interface FiltersParams {
 }
 
 export type Param = keyof FiltersParams;
+
+export interface ItemInCart extends Item{
+  count?:number;
+  total?:number;
+}

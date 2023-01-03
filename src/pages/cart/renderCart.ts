@@ -1,11 +1,30 @@
 import {createEl} from "../../components/createEl";
+import {renderProductList} from "./renderProductList";
+import {renderCartTitle} from "./renderCartTitle";
+import {getState} from "./getState";
+import {renderGeneralCartInfo} from "./renderGeneralCartInfo";
 
 export function renderCart() {
-  const cart = createEl('div', 'cart')
-  cart.innerHTML=`
-    <h2>Cart</h2>
-<h3 data-href="main" class="pages" style="cursor:pointer">Main page</h3>
-`
+  const cartWrapper = createEl('div', 'cart-wrapper');
+  const cart = createEl('div', 'cart');
+  const cartTitle = renderCartTitle();
+  const cartList = createEl('div', 'cart__list');
+  const state = getState();
 
-  return cart
+  localStorage.setItem('currentPage','1');
+
+  if (state.length>0) {
+    cart.appendChild(cartTitle);
+  }
+
+  renderProductList(state,cartList);
+  cart.appendChild(cartList);
+  cartWrapper.appendChild(cart);
+
+  if (state.length>0) {
+    cartWrapper.appendChild(renderGeneralCartInfo());
+  }
+
+  return cartWrapper;
 }
+

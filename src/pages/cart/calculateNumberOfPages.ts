@@ -1,7 +1,7 @@
 export const calculateNumberOfPages = (allCountOfGoods:number, countGoodsOnPage:number) => {
-  const countPages=  Math.ceil(allCountOfGoods/countGoodsOnPage)
+  const countPages =  Math.ceil(allCountOfGoods/countGoodsOnPage);
 
-  localStorage.setItem('countOfPagesOnCart',countPages.toString())
+  localStorage.setItem('countOfPagesOnCart',countPages.toString());
 
-  return countPages
+  return countPages;
 }

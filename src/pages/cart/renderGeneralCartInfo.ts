@@ -2,6 +2,7 @@ import {createEl} from "../../components/createEl";
 import {promo} from "../../data/promo";
 import {Promo} from "../../types/types";
 import {getDiscount} from "./getDiscount";
+import { renderPurchaseModal } from "./renderPurchaseModal";
 
 export const renderGeneralCartInfo = () => {
   const countItems=localStorage.getItem('cartCountTotalJewelryStore');
@@ -15,7 +16,7 @@ export const renderGeneralCartInfo = () => {
   const discountExample = createEl('div', 'cart__summary-discount-example','Promo for test: \'rs\', \'epm\'');
   const currentDiscount = createEl('div','discount-current');
   const addButton =createEl('button','discount-current-btn','ADD');
-  const appliedCodesJewelryStore = localStorage.getItem('appliedCodesJewelryStore')
+  const appliedCodesJewelryStore = localStorage.getItem('appliedCodesJewelryStore');
   const btnBuyNow = createEl('button', 'cart__summary-btn-buy', 'Buy now');
 
   if (discountInput instanceof HTMLInputElement){
@@ -61,6 +62,8 @@ export const renderGeneralCartInfo = () => {
     }
 
   })
-  // btnBuyNow.addEventListener('click', renderPurchaseModal)
+
+  btnBuyNow.addEventListener('click', renderPurchaseModal);
+
   return generalCartInfo;
 }

@@ -12,14 +12,16 @@ export const router = () => {
       e.preventDefault()
       const path = (<HTMLLinkElement>e.target).dataset.href
       locationHandler(path)
-    } else if ((<Element>e.target).classList.contains('open-item-details-page')) {
-      const path = 'product-details'
-      let itemCardId: Element | null|string = (<Element>e.target).closest('div[id]')
-      if(itemCardId!==null) {
+    } else if ((<Element>e.target).closest('.open-item-details-page')) {
+      if (!(<Element>e.target).classList.contains('card__button-add')){
+        const path = 'product-details'
+      let itemCardId: Element | null | string = (<Element>e.target).closest('div[id]')
+      if (itemCardId !== null) {
         itemCardId = (itemCardId.id).split('-')[0]
         locationHandler(path, itemCardId)
       }
     }
+  }
   })
 }
 

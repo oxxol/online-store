@@ -4,14 +4,15 @@ import { getFiltersParams } from "./getFiltersParams";
 import {updateProductList} from "../cart/updateProductList";
 import {Item} from "../../types/types";
 
-export function renderGoodCard(id: string) {
-  const card = createEl('div', 'card')
-  const filtersParams = getFiltersParams()
-  const view = filtersParams.view?.join('') === 'small' ? '5' : '4'
-  card.style.setProperty('max-width', `calc((100% - ${(Number(view) - 1)}rem) / ${view})`)
-  card.setAttribute('id', `${id}-card`)
-  const item = goods.find((item) => item.id === id)
+export function renderGoodCart(id: string) {
+  const card = createEl('div', 'card');
+  card.classList.add('open-item-details-page');
+  const filtersParams = getFiltersParams();
+  const view = filtersParams.view?.join('') === 'small'? '5':'4';
+  const item = goods.find((item) => item.id === id);
   const cartState = localStorage.getItem('cartStateJewelryStore')?JSON.parse(`${localStorage.getItem('cartStateJewelryStore')}`):[];
+  card.style.setProperty('max-width', `calc(100% / ${view} - 0.4rem)`);
+  card.setAttribute('id', `${id}-card`);
 
   if (item) {
     const cardImgContainer = createEl('div', 'card__img-container')

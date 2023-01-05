@@ -2,6 +2,7 @@ import {createEl} from "../../components/createEl";
 import {goods} from "../../data/goods";
 import { ItemInCart} from "../../types/types";
 import {updateProductList} from "./updateProductList";
+import {updateItemTotal} from "./updateItemTotal";
 
 export const renderProductListItem = (product: ItemInCart, index: number) => {
   const item = goods.find((item) => item.id === product.id);
@@ -19,18 +20,21 @@ export const renderProductListItem = (product: ItemInCart, index: number) => {
     const itemOtherInfo = createEl('div', 'cart__details-other');
     const rating = '★'.repeat(Number(item.rating)) + '☆'.repeat(5 - Number(item.rating));
     const itemRating = createEl('div', 'cart__details-other-rating',`Rating: ${rating}`);
-    const itemPrice = createEl('div', 'cart__details-price',`Price:${item.price}`)
+    const itemPrice = createEl('div', 'cart__details-price',`Price: $${item.price}`)
     const countControls = createEl('div', 'cart__controls');
     const stockCount = createEl('div', 'cart__controls-stock',`Stock: ${product.stock}`);
     const countInfo = createEl('div', 'cart__controls-info');
     const decrementBtn = createEl('button', 'cart__controls-decrement', '-');
     const itemCount = createEl('div', 'cart__controls-count',`${product.count}`);
     const incrementBtn = createEl('button', 'cart__controls-increment', '+');
-    const totalCost= createEl('div', 'cart__controls-total',`Total: ${product.total}`);
+    const totalCost= createEl('div', 'cart__controls-total',`Total: $${product.total}`);
 
     if (img instanceof HTMLImageElement) {
       img.setAttribute('src', item.img[0]);
     }
+
+    itemImg.classList.add('open-item-details-page')
+    itemDetails.classList.add('open-item-details-page');
 
     decrementBtn.id=item.id;
     incrementBtn.id=item.id;
@@ -51,16 +55,7 @@ export const renderProductListItem = (product: ItemInCart, index: number) => {
     cartItem.appendChild(itemDetails);
     cartItem.appendChild(countControls);
 
-    countInfo.addEventListener('click',(e)=>{
-      const currentElement = <Element>e.target;
-
-      if (currentElement.classList.contains('cart__controls-decrement')) {
-        updateProductList(currentElement.id, -1);
-      } else if (currentElement.classList.contains('cart__controls-increment')) {
-        updateProductList(currentElement.id, 1);
-      }
-
-    })
+    countInfo.addEventListener('click',updateItemTotal)
   }
 
   return cartItem;

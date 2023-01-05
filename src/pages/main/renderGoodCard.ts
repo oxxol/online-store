@@ -4,7 +4,7 @@ import { getFiltersParams } from "./getFiltersParams";
 import {updateProductList} from "../cart/updateProductList";
 import {Item} from "../../types/types";
 
-export function renderGoodCart(id: string) {
+export function renderGoodCard(id: string) {
   const card = createEl('div', 'card');
   card.classList.add('open-item-details-page');
   const filtersParams = getFiltersParams();

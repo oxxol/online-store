@@ -1,5 +1,5 @@
 %button {
-  min-height: 3rem;
+  height: 3rem;
   border: 1px solid $color-light-xl;
   background-color: $color-light-xl;
   line-height: 3rem;
@@ -9,12 +9,25 @@
   text-transform: uppercase;
   text-align: center;
   transition: 0.3s;
+  overflow: hidden;
   cursor: pointer;
 
   &:hover {
     border: 1px solid $color-dark-cold;
     background-color: $color-dark-cold;
     color: $color-light-2xl;
+  }
+}
 
+%buttonInCart {
+  @extend %button;
+  border: 1px solid $color-light-l;
+  background-color: $color-light-l;
+  color: $color-light-2xl;
+
+  &:hover {
+    border: 1px solid $color-dark-cold;
+    background-color: $color-dark-cold;
+    color: $color-light-2xl;
   }
 }

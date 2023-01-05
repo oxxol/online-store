@@ -2,7 +2,7 @@ import { createEl } from "../../components/createEl";
 import { goods } from "../../data/goods";
 import { filteringGoods } from "./filteringGoods";
 import { getFiltersParams } from "./getFiltersParams";
-import { renderGoodCart } from "./renderGoodCart";
+import { renderGoodCard} from "./renderGoodCard";
 
 export function renderStoreGoods() {
   const storeGoods = createEl('div', 'store__goods')
@@ -13,7 +13,7 @@ export function renderStoreGoods() {
     storeGoods.appendChild(notFound)
   }
   filteredGoods.forEach((good) => {
-    storeGoods.appendChild(renderGoodCart(good.id))
+    storeGoods.appendChild(renderGoodCard(good.id))
   })
 
   return storeGoods

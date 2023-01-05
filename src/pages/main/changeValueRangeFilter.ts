@@ -1,7 +1,7 @@
 import { Param } from "../../types/types"
 import { getFromToValueOfRangeFilter } from "./getFromToValueOfRangeFilter"
 
-export function changeValueRangeFilter () {
+export function changeValueRangeFilter() {
   const sliderInputs = document.querySelectorAll('.slider-input')
   sliderInputs.forEach((input) => {
     const typeFilter = input.getAttribute('id')?.split('-')[1] as Param

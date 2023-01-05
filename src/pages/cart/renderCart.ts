@@ -10,9 +10,6 @@ export function renderCart() {
   const cartTitle = renderCartTitle();
   const cartList = createEl('div', 'cart__list');
   const state = getState();
-  // const pageNumber = Number(localStorage.getItem('currentPage'));
-  // console.log(pageNumber)
-  // localStorage.setItem('currentPage','1');
 
   if (state.length>0) {
     cart.appendChild(cartTitle);

@@ -16,6 +16,7 @@ export const renderGeneralCartInfo = () => {
   const currentDiscount = createEl('div','discount-current');
   const addButton =createEl('button','discount-current-btn','ADD');
   const appliedCodesJewelryStore = localStorage.getItem('appliedCodesJewelryStore')
+  const btnBuyNow = createEl('button', 'cart__summary-btn-buy', 'Buy now');
 
   if (discountInput instanceof HTMLInputElement){
     discountInput.type = 'text';
@@ -33,8 +34,9 @@ export const renderGeneralCartInfo = () => {
   generalCartInfo.appendChild(infoTitle);
   generalCartInfo.appendChild(infoWrapper);
   generalCartInfo.appendChild(discountInput);
-  generalCartInfo.appendChild(currentDiscount);
   generalCartInfo.appendChild(discountExample);
+  generalCartInfo.appendChild(currentDiscount);
+  generalCartInfo.appendChild(btnBuyNow);
 
   discountInput.addEventListener('input',(e)=>{
     const target = <HTMLInputElement>e.target;
@@ -59,6 +61,6 @@ export const renderGeneralCartInfo = () => {
     }
 
   })
-
+  // btnBuyNow.addEventListener('click', renderPurchaseModal)
   return generalCartInfo;
 }

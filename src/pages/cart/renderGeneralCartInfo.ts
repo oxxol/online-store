@@ -45,7 +45,7 @@ export const renderGeneralCartInfo = () => {
 
     if(promoItem){
       currentDiscount.insertAdjacentHTML('afterbegin',`<div>${promoItem.name} - ${promoItem.discount}%</div>`);
-      const usedPromo = JSON.parse(`${appliedCodesJewelryStore}`);
+      const usedPromo = JSON.parse(`${localStorage.getItem('appliedCodesJewelryStore')}`);
       const isPromoApplied = usedPromo?.findIndex((el:Promo)=>el.code===promoItem.code);
 
       if(!usedPromo || isPromoApplied===-1) {

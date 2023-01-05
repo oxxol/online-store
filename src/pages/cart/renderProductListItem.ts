@@ -1,7 +1,6 @@
 import {createEl} from "../../components/createEl";
 import {goods} from "../../data/goods";
 import { ItemInCart} from "../../types/types";
-import {updateProductList} from "./updateProductList";
 import {updateItemTotal} from "./updateItemTotal";
 
 export const renderProductListItem = (product: ItemInCart, index: number) => {

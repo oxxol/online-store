@@ -9,7 +9,6 @@ export const renderAppliedCodes = (item?: Promo) => {
     : localStorage.getItem('appliedCodesJewelryStore');
   const promoTable = createEl('div','promo-wrapper');
   const promoTitle = createEl('div','promo-title','Applied codes:');
-  const currentTotal = document.querySelector('.cart__summary-total');
   let appliedCodesArray:Promo[] = JSON.parse(appliedCodesJewelryStore || '[]');
 
   promoTable.appendChild(promoTitle);
@@ -40,10 +39,10 @@ export const renderAppliedCodes = (item?: Promo) => {
       if (appliedCodesArray.length>0) {
         localStorage.setItem('appliedCodesJewelryStore', JSON.stringify(appliedCodesArray));
       } else {
+        const currentTotal = document.querySelector('.cart__summary-total');
         currentTotal?.classList.remove('cancelled');
         localStorage.removeItem('appliedCodesJewelryStore');
         promoTable.parentElement?.replaceChildren();
-
         return promoTable;
       }
 

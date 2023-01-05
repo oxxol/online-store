@@ -3,7 +3,6 @@ import {ItemInCart} from "../../types/types";
 import {setPageNumber} from "./setPageNumber";
 
 export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countItems?:number,currentPage=1) => {
-
   if(array.length ==0 ) {
     const title= document.querySelector('.cart__title');
     title && title.replaceChildren();

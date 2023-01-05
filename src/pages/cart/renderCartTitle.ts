@@ -12,6 +12,11 @@ export const renderCartTitle = () => {
   const btnBack = createEl('button', 'cart__title-navigation-btn','<');
   const btnForward = createEl('button', 'cart__title-navigation-btn','>');
   const pageNumber = createEl('div', 'cart__title-navigation-page','1');
+  const localCurrentPage = localStorage.getItem('currentPage');
+
+  if(localCurrentPage) {
+    pageNumber.textContent = localCurrentPage;
+  }
 
   cartTitle.classList.add('cart__item');
   btnBack.classList.add('back');

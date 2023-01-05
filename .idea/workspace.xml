@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5f8d78ae-e597-438f-a801-e9dbc789b993" name="Changes" comment="refactor: change renderGoodCard">
-      <change afterPath="$PROJECT_DIR$/src/pages/cart/renderPurchaseMessage.ts" afterDir="false" />
+    <list default="true" id="5f8d78ae-e597-438f-a801-e9dbc789b993" name="Changes" comment="fix:fixed discount calculation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/_cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/_cart.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/renderAppliedCodes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderAppliedCodes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/renderCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderCart.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/renderGeneralCartInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderGeneralCartInfo.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/validateConfirm.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/validateConfirm.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/product-details/renderProductDetails.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/product-details/renderProductDetails.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

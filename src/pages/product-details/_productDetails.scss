@@ -1,6 +1,6 @@
 .product-details {
   font-size: 1.6rem;
-  height: calc(100vh - 18rem);
+  // height: calc(100vh - 18rem);
   padding: 2rem 0;
 }
 
@@ -39,7 +39,8 @@
   }
 
   &__description {
-    width: 60%;
+    flex: 1 1 0;
+    // width: 60%;
   }
 }
 

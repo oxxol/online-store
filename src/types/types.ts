@@ -37,3 +37,5 @@ export interface ItemInCart extends Item{
   count?:number;
   total?:number;
 }
+
+export type ParamOfCart = 'page' | 'items'

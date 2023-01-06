@@ -2,6 +2,7 @@ import {renderProductListItem} from "./renderProductListItem";
 import {ItemInCart} from "../../types/types";
 import {setPageNumber} from "./setPageNumber";
 import {createEl} from "../../components/createEl";
+import { getURLParam } from "./getURLParam";
 
 export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countItems?:number,currentPage=1) => {
 
@@ -17,13 +18,14 @@ export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countI
     })
 
   }else {
-    const localItemsCount = localStorage.getItem('countOfItemsOnCartPage');
+    const localItemsCount = getURLParam('items');
 
     if(localItemsCount) {
       countItems = Number(localItemsCount);
     }
 
-    const localCurrentPage = localStorage.getItem('currentPage');
+    // const localCurrentPage = localStorage.getItem('currentPage');
+    const localCurrentPage = getURLParam('page')
 
     if(localCurrentPage) {
       currentPage = Number(localCurrentPage);
@@ -31,8 +33,8 @@ export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countI
 
     if(!countItems){
 
-      if(localStorage.getItem('countOfItemsOnCartPage')){
-        countItems = Number(localStorage.getItem('countOfItemsOnCartPage'));
+      if(getURLParam('items')){
+        countItems = Number(getURLParam('items'));
       }
       else{
         countItems=3;

@@ -21,5 +21,6 @@ function locationHandler(path?: string, id?: string) {
   currentId? renderPage(location,currentId): renderPage(location)
   window.history.replaceState({}, document.title, window.location.href.split('?')[0]);
   window.history.pushState(window.history.state, "", currentId ? `#${location}?${currentId}` :location=='/'?'': `#${location}`);
-};
+}
+
 export default locationHandler

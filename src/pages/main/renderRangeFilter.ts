@@ -5,12 +5,8 @@ import { createURL } from "./createURL"
 import { getFromToValueOfRangeFilter } from "./getFromToValueOfRangeFilter"
 import { changeValueCheckboxFilter } from "./changeValueCheckboxFilter"
 import { changeValueRangeFilter } from "./changeValueRangeFilter"
-import { getFiltersParams } from "./getFiltersParams"
-import { filteringGoods } from "./filteringGoods"
 
 export function renderRangeFilter(typeFilter: Param) {
-  const filtersParams = getFiltersParams()
-  const filteredGoods = Object.keys(filtersParams).length === 0 ? goods : filteringGoods()
   const filter = createEl('div', 'filters__range')
   const title = createEl('h4', 'filters__title' , typeFilter)
   filter.appendChild(title)

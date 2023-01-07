@@ -1,7 +1,7 @@
 .product-details {
   font-size: 1.6rem;
-  // height: calc(100vh - 18rem);
   padding: 2rem 0;
+  flex: 1 1 0;
 }
 
 .breadcrumb {
@@ -40,7 +40,6 @@
 
   &__description {
     flex: 1 1 0;
-    // width: 60%;
   }
 }
 

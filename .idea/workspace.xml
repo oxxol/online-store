@@ -6,7 +6,6 @@
       <change beforePath="$PROJECT_DIR$/src/pages/cart/_cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/_cart.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/cart/renderCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderCart.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/cart/renderProductList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderProductList.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/renderProductListItem.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderProductListItem.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/cart/renderPurchaseMessage.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderPurchaseMessage.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -1,16 +1,17 @@
 import {renderProductListItem} from "./renderProductListItem";
 import {ItemInCart} from "../../types/types";
 import {setPageNumber} from "./setPageNumber";
+import {createEl} from "../../components/createEl";
 
 export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countItems?:number,currentPage=1) => {
 
   if(array.length ==0 ) {
     setTimeout(()=>{
-      const cart = document.querySelector('.cart-page');
-
+      const cart = document.querySelector('.cart__page');
+      const cartInfo = createEl('h2','cart__page-description','empty cart')
       if(cart!==null) {
         cart.replaceChildren();
-        cart.textContent = 'empty cart';
+        cart.appendChild(cartInfo)
       }
 
     })

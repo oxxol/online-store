@@ -5,7 +5,7 @@ import {getState} from "./getState";
 import {renderGeneralCartInfo} from "./renderGeneralCartInfo";
 
 export function renderCart() {
-  const cartWrapper = createEl('main', 'cart-page');
+  const cartWrapper = createEl('main', 'cart__page');
   const cart = createEl('div', 'cart');
   const cartTitle = renderCartTitle();
   const cartList = createEl('div', 'cart__list');

@@ -4,7 +4,7 @@ import locationHandler from "../../router/locationHandler";
 
 export const renderPurchaseMessage = () => {
   const overlay = document.querySelector('.overlay');
-  const cart = document.querySelector('.cart-wrapper');
+  const cart = document.querySelector('.cart__page');
   let time =3;
   const cartMessage = createEl('div', 'cart__purchase-message',`Thanks for your order. Redirect to the store after ${time} sec`);
   const timerId =setInterval(()=>{

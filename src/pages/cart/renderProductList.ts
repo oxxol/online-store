@@ -1,12 +1,21 @@
 import {renderProductListItem} from "./renderProductListItem";
 import {ItemInCart} from "../../types/types";
 import {setPageNumber} from "./setPageNumber";
+import {createEl} from "../../components/createEl";
 
 export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countItems?:number,currentPage=1) => {
+
   if(array.length ==0 ) {
-    const cart = document.querySelector('.cart');
-    cart && cart.firstElementChild?.remove();
-    wrapper.textContent = 'empty cart';
+    setTimeout(()=>{
+      const cart = document.querySelector('.cart__page');
+      const cartInfo = createEl('h2','cart__page-description','empty cart')
+      if(cart!==null) {
+        cart.replaceChildren();
+        cart.appendChild(cartInfo)
+      }
+
+    })
+
   }else {
     const localItemsCount = localStorage.getItem('countOfItemsOnCartPage');
 

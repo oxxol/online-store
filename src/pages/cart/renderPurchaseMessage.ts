@@ -1,5 +1,6 @@
 import {createEl} from "../../components/createEl";
 import {updateProductList} from "./updateProductList";
+import locationHandler from "../../router/locationHandler";
 
 export const renderPurchaseMessage = () => {
   const overlay = document.querySelector('.overlay');
@@ -12,7 +13,7 @@ export const renderPurchaseMessage = () => {
 
     if(time<=0){
       clearInterval(timerId)
-      window.location.href = '/'
+      locationHandler('main')
     }
 
   },1000)

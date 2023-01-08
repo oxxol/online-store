@@ -4,8 +4,8 @@ import {setPageNumber} from "./setPageNumber";
 
 export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countItems?:number,currentPage=1) => {
   if(array.length ==0 ) {
-    const title= document.querySelector('.cart__title');
-    title && title.replaceChildren();
+    const cart = document.querySelector('.cart');
+    cart && cart.firstElementChild?.remove();
     wrapper.textContent = 'empty cart';
   }else {
     const localItemsCount = localStorage.getItem('countOfItemsOnCartPage');

@@ -3,10 +3,18 @@ import {ItemInCart} from "../../types/types";
 import {setPageNumber} from "./setPageNumber";
 
 export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countItems?:number,currentPage=1) => {
+
   if(array.length ==0 ) {
-    const cart = document.querySelector('.cart');
-    cart && cart.firstElementChild?.remove();
-    wrapper.textContent = 'empty cart';
+    setTimeout(()=>{
+      const cart = document.querySelector('.cart-page');
+
+      if(cart!==null) {
+        cart.replaceChildren();
+        cart.textContent = 'empty cart';
+      }
+
+    })
+
   }else {
     const localItemsCount = localStorage.getItem('countOfItemsOnCartPage');
 

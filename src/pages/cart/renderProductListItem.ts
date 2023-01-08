@@ -30,6 +30,7 @@ export const renderProductListItem = (product: ItemInCart, index: number) => {
 
     if (img instanceof HTMLImageElement) {
       img.setAttribute('src', item.img[0]);
+      img.setAttribute('alt', item.name);
     }
 
     itemImg.classList.add('open-item-details-page')

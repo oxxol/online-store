@@ -3,15 +3,12 @@ import locationHandler from "./locationHandler";
 export const router = () => {
 
   window.addEventListener("hashchange", () => {
-    // const url = window.location.href
-    // const hash = (url.lastIndexOf('?') > url.lastIndexOf('#')) ?
-    // url.substring (url.lastIndexOf("#") + 1, url.lastIndexOf("?")) : '';
-    // // const hash = href.substring(href.lastIndexOf("#") + 1, href.lastIndexOf("?"))
-    // console.log('HASH', hash)
     const hash = window.location.hash.slice(1)
     locationHandler(hash)
   });
+
   locationHandler()
+
   window.addEventListener('click', (e) => {
     if ((<Element>e.target).classList.contains('pages')) {
       e.preventDefault()
@@ -28,6 +25,7 @@ export const router = () => {
       }
     }
   })
+  
   window.addEventListener('popstate', () => {
     locationHandler()
   });

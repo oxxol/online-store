@@ -14,7 +14,6 @@ export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countI
         cart.replaceChildren();
         cart.appendChild(cartInfo)
       }
-
     })
 
   }else {
@@ -24,7 +23,6 @@ export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countI
       countItems = Number(localItemsCount);
     }
 
-    // const localCurrentPage = localStorage.getItem('currentPage');
     const localCurrentPage = getURLParam('page')
 
     if(localCurrentPage) {

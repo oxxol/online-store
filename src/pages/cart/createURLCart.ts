@@ -5,6 +5,7 @@ export function createURLCart(key: ParamOfCart, value: string) {
   const params = new URLSearchParams(window.location.search.slice(1))
   const hash = window.location.hash
   const pathname = window.location.pathname
+  const newUrl = new URL(url)
 
   if (params.has(key)) {
     params.set(key, value)
@@ -12,9 +13,9 @@ export function createURLCart(key: ParamOfCart, value: string) {
   else {
     params.append(key, value)
   }
-  const newUrl = new URL(url)
+  
   newUrl.hash = hash
   newUrl.search = params.toString()
   newUrl.pathname = pathname
-  window.history.pushState({}, "", newUrl)
+  window.history.pushState({}, "", newUrl) 
 }

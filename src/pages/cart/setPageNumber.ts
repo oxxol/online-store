@@ -18,8 +18,10 @@ export const setPageNumber = (selector: string, quantity: number) => {
   const cartCountTotalJewelryStore = localStorage.getItem('cartCountTotalJewelryStore')
 
   if (getURLParams('items')) {
-    countOfItemsOnCartPage = Number(getURLParams('items')) > Number(countOfItemsOnCartPage) ?
-      cartCountTotalJewelryStore : countOfItemsOnCartPage
+    if (Number(getURLParams('items')) > Number(countOfItemsOnCartPage)) {
+      countOfItemsOnCartPage = cartCountTotalJewelryStore
+      pageNumber = lastPage
+    }
   }
 
   if(cartStateJewelryStore!==null){

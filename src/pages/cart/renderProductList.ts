@@ -2,9 +2,9 @@ import {renderProductListItem} from "./renderProductListItem";
 import {ItemInCart} from "../../types/types";
 import {setPageNumber} from "./setPageNumber";
 import {createEl} from "../../components/createEl";
+import { getURLParams } from "./getURLParams";
 
-export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countItems?:number,currentPage=1) => {
-
+export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countItems?:number, currentPage=1) => {
   if(array.length ==0 ) {
     setTimeout(()=>{
       const cart = document.querySelector('.cart__page');
@@ -13,26 +13,24 @@ export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countI
         cart.replaceChildren();
         cart.appendChild(cartInfo)
       }
-
     })
 
   }else {
-    const localItemsCount = localStorage.getItem('countOfItemsOnCartPage');
-
-    if(localItemsCount) {
-      countItems = Number(localItemsCount);
+    const localItemsCount = Number(getURLParams('items')) || 3;
+    if (localItemsCount) {
+      countItems = localItemsCount;
     }
-
-    const localCurrentPage = localStorage.getItem('currentPage');
-
-    if(localCurrentPage) {
-      currentPage = Number(localCurrentPage);
+    currentPage = Number(getURLParams('page')) || 1;
+    const lastPage = Number(localStorage.getItem('countOfPagesOnCart'))
+    
+    if (currentPage > lastPage && lastPage) {
+      currentPage = lastPage
     }
 
     if(!countItems){
 
-      if(localStorage.getItem('countOfItemsOnCartPage')){
-        countItems = Number(localStorage.getItem('countOfItemsOnCartPage'));
+      if(getURLParams('items')){
+        countItems = Number(getURLParams('items'));
       }
       else{
         countItems=3;

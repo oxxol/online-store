@@ -1,25 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f184d554-60a0-4935-8340-7a4fefeff95e" name="Changes" comment="fix:fixed discount calculation">
-      <change afterPath="$PROJECT_DIR$/src/pages/cart/cartServices.ts" afterDir="false" />
+    <list default="true" id="0488a180-fab2-4519-854e-36ac73b245af" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/calculateNumberOfPages.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/createURLCart.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/getDiscount.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/getState.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/getURLParams.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/pagePagination.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/pagePagination.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/renderAppliedCodes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderAppliedCodes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/renderCart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderCart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/_cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/_cart.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/cart/renderCartTitle.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderCartTitle.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/renderGeneralCartInfo.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderGeneralCartInfo.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/renderProductList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/renderProductList.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/setPageNumber.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/updateCartTotal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/updateCartTotal.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/updateItemTotal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/updateItemTotal.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/updateProductList.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/updateProductList.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/product-details/renderProductDetails.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/product-details/renderProductDetails.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,13 +22,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
-  </component>
-  <component name="ProjectId" id="2JE5zlKrCqyYH99FZaOO3Z8Niq7" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2K6dOeB4mOlBSAIK43S1BT5SSp5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -53,56 +32,22 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/RS school/песочница",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
+    "last_opened_file_path": "D:/новый магазин/Новая папка (2)/online-store",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "D:\\новый магазин\\the newest\\online-store\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "D:\\новый магазин\\Новая папка (2)\\online-store\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\новый магазин\online-store\src\assets\img\webp" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\JEKa\Desktop\online-store\src\assets\img" />
-      <recent name="C:\Users\JEKa\Desktop\online-store\src\assets\img\svg" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5f8d78ae-e597-438f-a801-e9dbc789b993" name="Changes" comment="" />
-      <created>1671630717582</created>
+      <changelist id="0488a180-fab2-4519-854e-36ac73b245af" name="Changes" comment="" />
+      <created>1673298935849</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1671630717582</updated>
-      <workItem from="1671630746788" duration="23601000" />
-      <workItem from="1672043464630" duration="4331000" />
-      <workItem from="1672049115978" duration="664000" />
-      <workItem from="1672049809389" duration="85382000" />
-      <workItem from="1672183612660" duration="894000" />
-      <workItem from="1672213120652" duration="694000" />
-      <workItem from="1672672039096" duration="1389000" />
-      <workItem from="1672729210544" duration="15154000" />
+      <updated>1673298935849</updated>
+      <workItem from="1673298938002" duration="1441000" />
     </task>
-    <task id="LOCAL-00001" summary="fix:fixed discount calculation">
-      <created>1672275196273</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1672275196273</updated>
-    </task>
-    <task id="LOCAL-00002" summary="refactor: change renderGoodCard">
-      <created>1672926619616</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1672926619640</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,12 +63,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: add cart functions" />
-    <MESSAGE value="feat: merge changes" />
-    <MESSAGE value="fix:fixed discount calculation" />
-    <MESSAGE value="refactor: change renderGoodCard" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: change renderGoodCard" />
   </component>
 </project>

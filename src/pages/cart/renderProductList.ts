@@ -5,13 +5,19 @@ import {createEl} from "../../components/createEl";
 import { getURLParams } from "./getURLParams";
 
 export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countItems?:number, currentPage=1) => {
+
   if(array.length ==0 ) {
     setTimeout(()=>{
       const cart = document.querySelector('.cart__page');
       const cartInfo = createEl('h2','cart__page-description','empty cart')
-      if(cart!==null) {
-        cart.replaceChildren();
-        cart.appendChild(cartInfo)
+      const cartMessage = document.querySelector('.cart__purchase-message')
+
+      if(cart!==null ) {
+
+        if(cartMessage===null){
+          cart.replaceChildren();
+          cart.appendChild(cartInfo)
+        }
       }
     })
 

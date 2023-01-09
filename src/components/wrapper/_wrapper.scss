@@ -78,3 +78,26 @@ body {
   padding-top: 2rem;
   min-height: 100vh;
 }
+
+@media (max-width: 1300px) {
+  html {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 1200px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 9px;
+  }
+
+  .wrapper {
+    padding: 0px 2rem;
+  }
+
+}

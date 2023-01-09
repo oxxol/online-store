@@ -1,8 +1,7 @@
 import {renderProductListItem} from "./renderProductListItem";
 import {ItemInCart} from "../../types/types";
-import {setPageNumber} from "./setPageNumber";
 import {createEl} from "../../components/createEl";
-import { getURLParams } from "./getURLParams";
+import {CartServices} from "./cartServices";
 
 export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countItems?:number, currentPage=1) => {
 
@@ -22,11 +21,11 @@ export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countI
     })
 
   }else {
-    const localItemsCount = Number(getURLParams('items')) || 3;
+    const localItemsCount = Number(CartServices.getURLParams('items')) || 3;
     if (localItemsCount) {
       countItems = localItemsCount;
     }
-    currentPage = Number(getURLParams('page')) || 1;
+    currentPage = Number(CartServices.getURLParams('page')) || 1;
     const lastPage = Number(localStorage.getItem('countOfPagesOnCart'))
     
     if (currentPage > lastPage && lastPage) {
@@ -35,8 +34,8 @@ export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countI
 
     if(!countItems){
 
-      if(getURLParams('items')){
-        countItems = Number(getURLParams('items'));
+      if(CartServices.getURLParams('items')){
+        countItems = Number(CartServices.getURLParams('items'));
       }
       else{
         countItems=3;
@@ -46,7 +45,7 @@ export const renderProductList = (array:ItemInCart[],wrapper: HTMLElement,countI
     let start = countItems*(currentPage-1);
     while(array[start]===undefined){
       start-=countItems;
-      currentPage = setPageNumber('cart__title-navigation-page',-1);
+      currentPage = CartServices.setPageNumber('cart__title-navigation-page',-1);
     }
     const end =start+ countItems;
     array.forEach((item, index) => {

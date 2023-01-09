@@ -1,8 +1,8 @@
 import {createEl} from "../../components/createEl";
 import {promo} from "../../data/promo";
 import {Promo} from "../../types/types";
-import {getDiscount} from "./getDiscount";
 import { renderPurchaseModal } from "./renderPurchaseModal";
+import {CartServices} from "./cartServices";
 
 export const renderGeneralCartInfo = () => {
   const countItems=localStorage.getItem('cartCountTotalJewelryStore');
@@ -29,7 +29,7 @@ export const renderGeneralCartInfo = () => {
   infoWrapper.appendChild(cartTotal);
 
   if(appliedCodesJewelryStore){
-    getDiscount(cartTotal);
+    CartServices.getDiscount(cartTotal);
   }
 
   generalCartInfo.appendChild(infoTitle);
@@ -53,7 +53,7 @@ export const renderGeneralCartInfo = () => {
         addButton.classList.remove('hide');
         addButton.onclick = () => {
           addButton.classList.add('hide');
-          getDiscount(cartTotal,promoItem);
+          CartServices.getDiscount(cartTotal,promoItem);
         }
       }
     }

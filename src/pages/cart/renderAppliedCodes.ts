@@ -1,7 +1,7 @@
 import {createEl} from "../../components/createEl";
 import {Promo} from "../../types/types";
-import {getDiscount} from "./getDiscount";
 import {updateAppliedPromoCodes} from "./updateAppliedPromoCodes";
+import {CartServices} from "./cartServices";
 
 export const renderAppliedCodes = (item?: Promo) => {
   const appliedCodesJewelryStore = item
@@ -49,7 +49,7 @@ export const renderAppliedCodes = (item?: Promo) => {
       const cartTotal = document.querySelector('.cart__summary-total') as HTMLDivElement;
 
       if (cartTotal!==null ) {
-        getDiscount(cartTotal);
+        CartServices.getDiscount(cartTotal);
       }
 
     }

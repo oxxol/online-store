@@ -1,12 +1,12 @@
 import {createEl} from "../../components/createEl";
 import {goods} from "../../data/goods";
-import {getState} from "./getState";
 import {renderProductList} from "./renderProductList";
 import {updateCartTotal} from "./updateCartTotal";
+import {CartServices} from "./cartServices";
 
 export const updateProductList = (id: string, quantity: number) => {
   const cartList = document.querySelector('.cart__list');
-  let cartState = getState();
+  let cartState = CartServices.getState();
   const productList = createEl('div', 'cart__list');
   const countItems = document.querySelector('.header__cart-count');
   const generalCartInfo = document.querySelector('.cart__summary');

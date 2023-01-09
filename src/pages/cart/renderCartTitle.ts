@@ -29,10 +29,12 @@ export const renderCartTitle = () => {
 
   if (checkCount instanceof HTMLInputElement){
     checkCount.type = 'number';
-    checkCount.min = '0';
+    checkCount.min = '1';
     checkCount.max =cartCountTotalJewelryStore? cartCountTotalJewelryStore.toString():'1';
     checkCount.autocomplete = "off";
     checkCount.defaultValue = CartServices.getURLParams('items') || '3';
+
+
   }
 
   cartTitle.appendChild(cartLabel);

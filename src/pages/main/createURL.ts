@@ -6,6 +6,7 @@ export function createURL(key: Param, value: string) {
   const params = new URLSearchParams(window.location.search.slice(1))
   const hash = window.location.hash
   const pathname = window.location.pathname
+  
   if (key === 'collection' || key === 'category') {
     if (params.has(key)) {
       const values = params.getAll(key).join('').split(',')
@@ -33,4 +34,4 @@ export function createURL(key: Param, value: string) {
   newUrl.search = params.toString()
   window.history.pushState({}, "", newUrl) 
   filteringGoods()
-} 
+}

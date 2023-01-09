@@ -1,13 +1,26 @@
-import { getURLParam } from "./getURLParam";
+import { getURLParams } from "./getURLParams";
 import {calculateNumberOfPages} from "./calculateNumberOfPages";
 import { createURLCart } from "./createURLCart";
 
-export const setPageNumber = (selector:string,quantity: number) => {
-  let pageNumber = Number(getURLParam('page')) || 1;
+export const setPageNumber = (selector: string, quantity: number) => {
+  
+  let pageNumber = Number(getURLParams('page')) || 1;
+  const lastPage = Number(localStorage.getItem('countOfPagesOnCart'))
+
+  if (pageNumber > lastPage && lastPage > 0) {
+    pageNumber = lastPage
+  }
+
   let countOfGoodsInCart = 0;
   let countItemsOnPage = 3;
   const cartStateJewelryStore = localStorage.getItem('cartStateJewelryStore');
-  const countOfItemsOnCartPage = getURLParam('items');
+  let countOfItemsOnCartPage = getURLParams('items');
+  const cartCountTotalJewelryStore = localStorage.getItem('cartCountTotalJewelryStore')
+
+  if (getURLParams('items')) {
+    countOfItemsOnCartPage = Number(getURLParams('items')) > Number(countOfItemsOnCartPage) ?
+      cartCountTotalJewelryStore : countOfItemsOnCartPage
+  }
 
   if(cartStateJewelryStore!==null){
     countOfGoodsInCart =  (JSON.parse(cartStateJewelryStore).length);
@@ -23,7 +36,8 @@ export const setPageNumber = (selector:string,quantity: number) => {
     pageNumber += quantity;
   }
 
-  document.querySelector(`.${selector}`)!.textContent =pageNumber.toString();
+  const numberPageValue = document.querySelector(`.${selector}`)
+  if(numberPageValue instanceof HTMLDivElement) numberPageValue.textContent = pageNumber.toString();
   createURLCart('page', pageNumber.toString())
 
   return pageNumber;

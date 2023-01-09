@@ -13,7 +13,7 @@ export function createURLCart(key: ParamOfCart, value: string) {
   else {
     params.append(key, value)
   }
-  
+
   newUrl.hash = hash
   newUrl.search = params.toString()
   newUrl.pathname = pathname

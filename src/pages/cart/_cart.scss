@@ -4,6 +4,13 @@
   gap: 3rem;
   font-size: 1.6rem;
 
+  &-description {
+    text-transform: capitalize;
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 7rem auto;
+  }
+
   .cart {
     width: 70%;
 

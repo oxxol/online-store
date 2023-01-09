@@ -14,6 +14,7 @@ export const renderCartTitle = () => {
   const pageNumber = createEl('div', 'cart__title-navigation-page', '1');
   const currentPage = Number(CartServices.getURLParams('page'));
   const lastPage = Number(localStorage.getItem('countOfPagesOnCart'));
+  const cartCountTotalJewelryStore = localStorage.getItem('cartCountTotalJewelryStore');
 
   if (currentPage > lastPage && lastPage > 0) {
     pageNumber.textContent = lastPage.toString()
@@ -27,9 +28,13 @@ export const renderCartTitle = () => {
   checkCount.id='checkCount';
 
   if (checkCount instanceof HTMLInputElement){
-    checkCount.type = 'text';
+    checkCount.type = 'number';
+    checkCount.min = '1';
+    checkCount.max =cartCountTotalJewelryStore? cartCountTotalJewelryStore.toString():'1';
     checkCount.autocomplete = "off";
     checkCount.defaultValue = CartServices.getURLParams('items') || '3';
+
+
   }
 
   cartTitle.appendChild(cartLabel);

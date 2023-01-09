@@ -1,8 +1,7 @@
-import {getDiscount} from "./getDiscount";
-import {getState} from "./getState";
+import {CartServices} from "./cartServices";
 
 export const updateCartTotal = () => {
-  const cartState = getState();
+  const cartState = CartServices.getState();
   const cartTotalCount =document.querySelector('.header__cart-total-count');
   const cartTotal =document.querySelector('.cart__summary-total')as HTMLElement;
   const cartSummaryCount=  document.querySelector('.cart__summary-count');
@@ -24,7 +23,7 @@ export const updateCartTotal = () => {
 
   if(cartTotal!==null){
     cartTotal.textContent = `Total: $${total}`;
-    getDiscount(cartTotal);
+    CartServices.getDiscount(cartTotal);
   }
 
   if(cartSummaryCount!==null){

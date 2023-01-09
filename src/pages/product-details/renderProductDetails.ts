@@ -2,8 +2,8 @@ import {createEl} from "../../components/createEl";
 import { goods } from "../../data/goods";
 import { Item } from "../../types/types";
 import { updateProductList } from "../cart/updateProductList";
-import {getState} from "../cart/getState";
 import {renderPurchaseModal} from "../cart/renderPurchaseModal";
+import {CartServices} from "../cart/cartServices";
 
 export const renderProductDetails = <T extends string | undefined>(id: T) => {
   const item = goods.find(item => item.id === id);
@@ -103,7 +103,7 @@ export const renderProductDetails = <T extends string | undefined>(id: T) => {
       }else if(target.classList.contains('button__buy')) {
 
         if (typeof id == 'string') {
-          const cartState = getState();
+          const cartState = CartServices.getState();
           const currentItemIndex= cartState.findIndex((el)=>el.id===id)
           if(currentItemIndex<0) {
             updateProductList(id, 1);

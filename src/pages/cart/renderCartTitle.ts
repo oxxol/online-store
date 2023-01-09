@@ -1,9 +1,7 @@
 import {createEl} from "../../components/createEl";
 import {renderProductList} from "./renderProductList";
-import {getState} from "./getState";
 import { pagePagination } from "./pagePagination";
-import { createURLCart } from "./createURLCart";
-import { getURLParams } from "./getURLParams";
+import {CartServices} from "./cartServices";
 
 export const renderCartTitle = () => {
   const cartTitle = createEl('div', 'cart__title');
@@ -14,7 +12,7 @@ export const renderCartTitle = () => {
   const btnBack = createEl('button', 'cart__title-navigation-btn','<');
   const btnForward = createEl('button', 'cart__title-navigation-btn', '>');
   const pageNumber = createEl('div', 'cart__title-navigation-page', '1');
-  const currentPage = Number(getURLParams('page'));
+  const currentPage = Number(CartServices.getURLParams('page'));
   const lastPage = Number(localStorage.getItem('countOfPagesOnCart'));
 
   if (currentPage > lastPage && lastPage > 0) {
@@ -31,7 +29,7 @@ export const renderCartTitle = () => {
   if (checkCount instanceof HTMLInputElement){
     checkCount.type = 'text';
     checkCount.autocomplete = "off";
-    checkCount.defaultValue = getURLParams('items') || '3';
+    checkCount.defaultValue = CartServices.getURLParams('items') || '3';
   }
 
   cartTitle.appendChild(cartLabel);
@@ -46,8 +44,8 @@ export const renderCartTitle = () => {
     const target = e.target as HTMLInputElement;
     const list = <HTMLElement>cartTitle.nextSibling;
     list.replaceChildren();
-    createURLCart('items', target.value);
-    renderProductList(getState(),list,+target.value);
+    CartServices.createURLCart('items', target.value);
+    renderProductList(CartServices.getState(),list,+target.value);
   }
 
   pageNavigation.addEventListener('click',pagePagination);

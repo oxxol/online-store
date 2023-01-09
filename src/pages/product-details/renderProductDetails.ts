@@ -45,12 +45,14 @@ export const renderProductDetails = <T extends string | undefined>(id: T) => {
 
     if (photo instanceof HTMLImageElement) {
       photo.setAttribute('src', item.img[0]);
+      photo.setAttribute('alt', item.name);
     }
 
     item.img.forEach(el => {
       const container = createEl('div', 'images__previews-container');
       const img = createEl('img', 'images__previews-preview');
       img.setAttribute('src', el);
+      img.setAttribute('alt', item.name);
       container.appendChild(img);
       previews.appendChild(container);
       img.addEventListener('click', () => {

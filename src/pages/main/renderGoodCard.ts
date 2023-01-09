@@ -19,6 +19,7 @@ export function renderGoodCard(id: string) {
     const cardImgContainer = createEl('div', 'card__img-container');
     const cardImg = createEl('img', 'card__img');
     if (cardImg instanceof HTMLImageElement) cardImg.setAttribute('src', item.img[0]);
+    cardImg.setAttribute('alt', item.name)
     cardImg.classList.add('open-item-details-page');
     const cardName = createEl('span', 'card__name', item.name);
     const cardPrice = createEl('span', 'card__price', `$ ${(item.price).toString()}`);

@@ -16,7 +16,7 @@ export function renderHeader() {
   const cartCount = createEl('div', 'header__cart-count')
   cartCount.setAttribute('data-href','cart')
   cartCount.classList.add('pages')
-  cartCount.textContent=localStorage.getItem('cartStateJewelryStore')?JSON.parse(`${localStorage.getItem('cartStateJewelryStore')}`).length.toString():'0'
+  cartCount.textContent=localStorage.getItem('cartCountTotalJewelryStore')?`${localStorage.getItem('cartCountTotalJewelryStore')}`:'0'
   const cartImg = document.createElement('img')
   cartImg.src = require('../../assets/img/svg/shopping-cart.svg')
   cartImg.alt = 'Shopping cart'

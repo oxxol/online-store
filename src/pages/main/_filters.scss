@@ -1,0 +1,249 @@
+.filters {
+  width: 20%;
+  padding-right: 1.5rem;
+
+  &__checkbox {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0.3em 0;
+    text-transform: uppercase;
+    color: $color-dark;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    &-btn-reset,
+    &-btn-copy {
+      @extend %button;
+      width: calc((100% - 1rem)/2);
+    }
+  }
+}
+
+.checkbox {
+
+  &__form {
+    padding: 3px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-dark;
+
+    & input:checked+label:before {
+      background-color: $color-dark;
+    }
+  }
+
+  &__block-found {
+    font-size: 1.4rem;
+  }
+
+  &__input {
+    padding: 0;
+    height: initial;
+    width: initial;
+    margin-bottom: 0;
+    display: none;
+    cursor: pointer;
+  }
+
+  &__label {
+    position: relative;
+    font-size: 1.8rem;
+    margin: 3px 0;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      padding: 6px;
+      display: inline-block;
+      position: relative;
+      vertical-align: top;
+      cursor: pointer;
+      margin-right: 1rem;
+      border: 1px solid $color-dark;
+    }
+  }
+}
+
+.range {
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  &__control-max,
+  &__control-min {
+    position: relative;
+    font-size: 1.2rem;
+    text-align: center;
+    color: $color-dark;
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 0;
+  }
+
+  &__control-min,
+  &__control-min {
+    padding-left: 0;
+    padding-right: 1rem;
+  }
+}
+
+.stock__slider-track,
+.price__slider-track {
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  border-radius: 2px;
+  background: $color-light-l;
+}
+
+.stock__slider,
+.price__slider {
+  position: relative;
+  width: 80%;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  outline: none;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  background-color: transparent;
+  pointer-events: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  height: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  background-color: $color-light-m;
+  cursor: pointer;
+  margin-top: -7px;
+  pointer-events: auto;
+  border-radius: 50%;
+}
+
+#from-stock,
+#from-price {
+  height: 0;
+  z-index: 5;
+}
+
+.drop__list {
+  -webkit-appearance: none;
+  appearance: none;
+  max-width: 25rem;
+  min-width: 20rem;
+  height: 3rem;
+  outline: none;
+  padding: 0.5rem 3rem 0.5rem 0.5rem;
+  font-size: 1.6rem;
+  border: 1px solid $color-dark-cold;
+  background-image: url(./assets/img/svg/arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: 100%;
+}
+
+.store {
+  width: 80%;
+
+  &__filters {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+}
+
+
+.found__block {
+  font-size: 1.8rem;
+}
+
+.search__block {
+  position: relative;
+  max-width: 25rem;
+  min-width: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+
+  &-input {
+    height: 3rem;
+    width: 100%;
+    outline: none;
+    padding: 0.5rem 3rem 0.5rem 0.5rem;
+    font-size: 1.8rem;
+    border: 1px solid $color-dark-cold;
+  }
+
+  &-btn-search {
+    display: block;
+    position: absolute;
+    right: 1.2rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 18px;
+    height: 18px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+}
+
+.view {
+  &__block {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked+.view__label {
+      border: 1px solid black;
+    }
+  }
+
+  &__label {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    background-size: cover;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+}

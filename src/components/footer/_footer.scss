@@ -1,0 +1,30 @@
+.footer {
+  display: flex;
+  background-color: $color-light-2xl;
+  justify-content: space-between;
+  align-items: center;
+  height: 9rem;
+  font-size: 1.6rem;
+  color: $color-dark-cold;
+
+  border-top: 1px solid $color-light-l;
+
+  &__links-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &__link-RS {
+    background-image: url(./assets/img/svg/rsschool.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 8rem;
+    height: 3.5rem;
+  }
+}

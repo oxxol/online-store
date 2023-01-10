@@ -1,0 +1,23 @@
+.error__page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 18rem);
+  gap: 2rem;
+
+  &-info {
+    font-size: 3rem;
+    font-weight: 400;
+  }
+
+  &-description {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}
+
+.homeButton {
+  @extend %button;
+  width: 20rem;
+}

@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0488a180-fab2-4519-854e-36ac73b245af" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_08_01_2023_21_40__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_08_01_2023_21_40__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_09_01_2023_13_41__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_09_01_2023_13_41__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/cart/_cart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/_cart.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/cart/updateCartTotal.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/cart/updateCartTotal.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +35,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "D:/новый магазин/Новая папка (2)/online-store",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "ts.external.directory.path": "D:\\новый магазин\\Новая папка (2)\\online-store\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -45,7 +50,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1673298935849</updated>
-      <workItem from="1673298938002" duration="5149000" />
+      <workItem from="1673298938002" duration="5939000" />
+      <workItem from="1673352697534" duration="1109000" />
     </task>
     <servers />
   </component>
